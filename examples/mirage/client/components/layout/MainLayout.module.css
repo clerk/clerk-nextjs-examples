@@ -1,0 +1,6 @@
+.layout {
+  height: 100vh;
+  background: linear-gradient(180deg, #ff4265 0%, #ff885b 100%);
+  display: flex;
+  justify-content: center;
+}

@@ -1,0 +1,24 @@
+.input {
+  width: 100%;
+  text-align: center;
+  padding: 16px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  border: none;
+  font-size: 20px;
+  line-height: 24px;
+  color: #fff;
+  margin-bottom: 24px;
+}
+
+.input:focus,
+.input:active {
+  border: none;
+  outline: none;
+}
+
+.helperText {
+  display: block;
+  align-self: flex-start;
+  font-weight: 600;
+}

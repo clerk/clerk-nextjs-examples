@@ -1,0 +1,18 @@
+.button {
+  background: #7431d7;
+  font-size: 16px;
+  line-height: 20px;
+  color: #fff;
+  font-family: "Nunito", sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  border: none;
+  border-radius: 3px;
+  min-width: 220px;
+  padding: 16px 32px;
+  cursor: pointer;
+}
+
+.button:disabled {
+  opacity: 0.5;
+}

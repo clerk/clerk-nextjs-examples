@@ -1,0 +1,26 @@
+.fileInput {
+  display: none;
+}
+
+.fileButton {
+  padding: 32px;
+  border: none;
+  border-radius: 48px;
+  background: rgba(255, 255, 255, 0.1);
+  cursor: pointer;
+}
+
+.skipUpload {
+  background: none;
+  border: none;
+  font-size: 16px;
+  color: #fff;
+  padding: 16px 32px;
+  cursor: pointer;
+  margin-top: 16px;
+}
+
+.profileImg {
+  border-radius: 48px;
+  max-height: 96px;
+}

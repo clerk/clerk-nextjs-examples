@@ -1,0 +1,50 @@
+/**
+ * Sidebar layout
+ */
+
+.container {
+  height: 100vh;
+  display: grid;
+  grid-template-columns: minmax(480px, 25%) 1fr;
+  text-align: center;
+}
+
+.cover {
+  background: url("/images/bg.png") no-repeat center center;
+  background-size: cover;
+}
+
+/**
+   * Clerk Components CSS customization
+   */
+
+.cl-auth-form-body input {
+  border: 0;
+  border-bottom: 1px solid #e5e5e5;
+  padding: 0;
+}
+
+.cl-auth-form-body input:focus {
+  border-bottom: 1px solid #312e81;
+}
+
+.cl-auth-form-body label > span {
+  color: rgba(0, 0, 0, 0.8);
+  font-weight: normal;
+  transition: transform 0.25s;
+  transform: translateY(20px);
+}
+
+.cl-auth-form-body label:focus-within > span {
+  transform: translateY(0px);
+}
+
+.cl-oauth-button-group {
+  margin-bottom: 3em;
+}
+
+.cl-oauth-button-group::after {
+  height: 0 !important;
+  margin: 0 !important;
+  background: none !important;
+}
