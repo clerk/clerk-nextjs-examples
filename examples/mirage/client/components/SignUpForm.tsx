@@ -30,10 +30,21 @@ enum FormSteps {
   PHOTO,
 }
 
+type CustomError = {
+  type: string;
+  message: string;
+};
+
 function SignUpForm() {
   const router = useRouter();
   const signUp = useSignUp();
   const clerk = useClerk();
+
+  const [error, setError] = useState<CustomError | null>(null);
+  const setClerkError = (error: any, type: string) =>
+    // @ts-ignore
+    setError({ type, message: error.longMessage });
+
   const [formStep, setFormStep] = useState(FormSteps.EMAIL);
   const {
     register,
@@ -56,13 +67,23 @@ function SignUpForm() {
     }
   };
 
-  const incrementFormStep = function () {
+  const nextFormStep = function () {
+    setError(null);
     setFormStep((formStep) => formStep + 1);
   };
 
   const emailVerification = async function () {
-    await sendClerkOtp();
-    setFormStep((formStep) => formStep + 1);
+    try {
+      setError(null);
+      await sendClerkOtp();
+      setFormStep((formStep) => formStep + 1);
+    } catch (err) {
+      if (err.errors) {
+        setClerkError(err.errors[0], "email");
+      } else {
+        throw err;
+      }
+    }
   };
 
   const verifyOtp = async function () {
@@ -71,7 +92,7 @@ function SignUpForm() {
       code: otp,
     });
     if (signUpAttempt.verifications.emailAddress.status === "verified") {
-      incrementFormStep();
+      nextFormStep();
     }
   };
 
@@ -109,6 +130,7 @@ function SignUpForm() {
             <>
               <Title>What’s your email address?</Title>
               <Input
+                errorText={error?.message}
                 {...register("email", {
                   required: true,
                   pattern: SIMPLE_REGEX_PATTERN,
@@ -151,7 +173,7 @@ function SignUpForm() {
                 {...register("firstName", { required: true, minLength: 2 })}
               />
               <Button
-                onClick={incrementFormStep}
+                onClick={nextFormStep}
                 disabled={
                   !getValues("firstName") || Boolean(errors["firstName"])
                 }
@@ -167,7 +189,7 @@ function SignUpForm() {
                 {...register("lastName", { required: true, minLength: 2 })}
               />
               <Button
-                onClick={incrementFormStep}
+                onClick={nextFormStep}
                 disabled={!getValues("lastName") || Boolean(errors["lastName"])}
               >
                 Continue
@@ -181,7 +203,7 @@ function SignUpForm() {
                 {...register("username", { required: true, minLength: 2 })}
               />
               <Button
-                onClick={incrementFormStep}
+                onClick={nextFormStep}
                 disabled={!getValues("username") || Boolean(errors["username"])}
               >
                 Continue

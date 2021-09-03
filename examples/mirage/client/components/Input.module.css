@@ -22,3 +22,10 @@
   align-self: flex-start;
   font-weight: 600;
 }
+
+.errorText {
+  display: block;
+  color: red;
+  align-self: flex-start;
+  font-weight: 600;
+}
