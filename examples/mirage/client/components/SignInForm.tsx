@@ -1,6 +1,6 @@
 import formStyles from "./layout/FormLayout.module.css";
 import { useClerk, useSignIn } from "@clerk/clerk-react";
-import { useState } from "react";
+import { KeyboardEvent, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useRouter } from "next/router";
 import { Button } from "./Button";
@@ -24,12 +24,20 @@ function SignInForm() {
   const router = useRouter();
   const signIn = useSignIn();
   const clerk = useClerk();
+
   const [formStep, setFormStep] = useState(FormSteps.EMAIL);
   const {
     register,
     getValues,
-    formState: { errors },
+    trigger,
+    formState: { errors: formValidationErrors },
   } = useForm<SignInInputs>({ mode: "all" });
+
+  const preventDefaultSubmission = (e: KeyboardEvent<HTMLFormElement>) => {
+    if (e.key == "Enter") {
+      e.preventDefault();
+    }
+  };
 
   const sendClerkOtp = async function () {
     const emailAddress = getValues("email");
@@ -62,7 +70,7 @@ function SignInForm() {
 
   return (
     <FormLayout type="sign-in">
-      <form>
+      <form onKeyPress={preventDefaultSubmission}>
         <div className={formStyles.fields}>
           {formStep === FormSteps.EMAIL && (
             <>
@@ -75,8 +83,11 @@ function SignInForm() {
                 })}
               />
               <Button
-                disabled={!getValues("email") || Boolean(errors["email"])}
+                disabled={
+                  !getValues("email") || Boolean(formValidationErrors["email"])
+                }
                 onClick={async () => await emailVerification()}
+                onKeyPress={async () => await emailVerification()}
               >
                 Continue
               </Button>
@@ -95,10 +106,14 @@ function SignInForm() {
                   maxLength: 6,
                   minLength: 6,
                 })}
+                onPaste={async () => await trigger("code")}
               />
               <Button
-                disabled={!getValues("code") || Boolean(errors["code"])}
+                disabled={
+                  !getValues("code") || Boolean(formValidationErrors["code"])
+                }
                 onClick={async () => await verifyOtp()}
+                onKeyPress={async () => await verifyOtp()}
               >
                 Continue
               </Button>

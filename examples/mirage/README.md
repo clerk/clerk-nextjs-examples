@@ -1,6 +1,6 @@
 # Clerk Transistor Starter
 
-![Preview](../docs/mirage.gif)
+![Preview](../../docs/mirage.gif)
 
 This Next.js project demonstrates how to use [@clerk/clerk-nextjs](https://docs.clerk.dev/get-started/nextjs?utm_source=github&utm_medium=starters&utm_campaign=mirage) together with some ClerkJS JavaScript methods to build a wizard sign-up form with two-factor authentication and profile attributes.
 
@@ -8,7 +8,17 @@ This Next.js project demonstrates how to use [@clerk/clerk-nextjs](https://docs.
 
 ## Getting Started
 
-First, run the development server:
+### Clerk Instance Setup
+
+The Mirage example requires a few Clerk instance settings to be set. Go to your instance dashboard page under **Settings** → **User management** and set `usernames` as required and enable `passwordless` authentication strategy.
+
+<img height="300px" src="../../docs/mirage-instance-settings.png" />
+
+### Development Setup
+
+1. Follow the instructions at the [getting started guide](https://docs.clerk.dev/get-started/nextjs?utm_source=github&utm_medium=starters&utm_campaign=mirage) for Next.js to setup Clerk.
+
+2. Run the development server:
 
 ```bash
 npm run dev

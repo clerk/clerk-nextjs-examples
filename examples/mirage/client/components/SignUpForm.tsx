@@ -2,7 +2,7 @@ import formStyles from "./layout/FormLayout.module.css";
 import styles from "./SignUpForm.module.css";
 import UploadIcon from "../assets/svg/upload.svg";
 import { useClerk, useSignUp, withClerk } from "@clerk/clerk-react";
-import { useRef, useState } from "react";
+import { KeyboardEvent, useRef, useState } from "react";
 import { useForm } from "react-hook-form";
 import { Button } from "./Button";
 import { Input } from "./Input";
@@ -49,8 +49,16 @@ function SignUpForm() {
   const {
     register,
     getValues,
+    trigger,
     formState: { errors },
   } = useForm<SignUpInputs>({ mode: "all" });
+
+  const preventDefaultSubmission = (e: KeyboardEvent<HTMLFormElement>) => {
+    if (e.key == "Enter") {
+      e.preventDefault();
+    }
+  };
+
   const [photoSrc, setPhotoSrc] = useState<string>("");
   const fileRef = useRef<HTMLInputElement | null>(null);
   const { ref: fileUploadRef, onChange: onFileChangeHookForm } =
@@ -124,7 +132,7 @@ function SignUpForm() {
 
   return (
     <FormLayout type="sign-up">
-      <form>
+      <form onKeyPress={preventDefaultSubmission}>
         <div className={formStyles.fields}>
           {formStep === FormSteps.EMAIL && (
             <>
@@ -139,6 +147,7 @@ function SignUpForm() {
               <Button
                 disabled={!getValues("email") || Boolean(errors["email"])}
                 onClick={async () => await emailVerification()}
+                onKeyPress={async () => await emailVerification()}
               >
                 Continue
               </Button>
@@ -157,10 +166,12 @@ function SignUpForm() {
                   maxLength: 6,
                   minLength: 6,
                 })}
+                onPaste={async () => await trigger("code")}
               />
               <Button
                 disabled={!getValues("code") || Boolean(errors["code"])}
                 onClick={async () => await verifyOtp()}
+                onKeyPress={async () => await verifyOtp()}
               >
                 Continue
               </Button>
@@ -174,6 +185,7 @@ function SignUpForm() {
               />
               <Button
                 onClick={nextFormStep}
+                onKeyPress={nextFormStep}
                 disabled={
                   !getValues("firstName") || Boolean(errors["firstName"])
                 }
@@ -190,6 +202,7 @@ function SignUpForm() {
               />
               <Button
                 onClick={nextFormStep}
+                onKeyPress={nextFormStep}
                 disabled={!getValues("lastName") || Boolean(errors["lastName"])}
               >
                 Continue
@@ -204,6 +217,7 @@ function SignUpForm() {
               />
               <Button
                 onClick={nextFormStep}
+                onKeyPress={nextFormStep}
                 disabled={!getValues("username") || Boolean(errors["username"])}
               >
                 Continue
@@ -239,6 +253,7 @@ function SignUpForm() {
               ) : (
                 <button
                   type="button"
+                  onKeyPress={promptForFile}
                   onClick={promptForFile}
                   className={styles.fileButton}
                 >
@@ -248,6 +263,7 @@ function SignUpForm() {
               <Button
                 disabled={!getValues("photo")}
                 onClick={async () => await completeRegistration()}
+                onKeyPress={async () => await completeRegistration()}
                 style={{ marginTop: 24 }}
               >
                 Continue
@@ -256,6 +272,7 @@ function SignUpForm() {
                 type="button"
                 className={styles.skipUpload}
                 onClick={async () => await completeRegistration()}
+                onKeyPress={async () => await completeRegistration()}
               >
                 Skip
               </button>

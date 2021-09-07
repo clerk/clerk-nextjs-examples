@@ -7,7 +7,12 @@ This repository holds sample code for different types of authentication form flo
     <img height="250" src="./docs/mirage.gif"/>
 </div>
 
-## Available examples
+## Live demo
+
+- Clerk Transistor - https://nextjs.transistor.clerk.app/
+- Clerk Mirage - https://nextjs.mirage.clerk.app/
+
+## Examples code
 
 - [Clerk Transistor](./examples/transistor): _Sign up screen using the Clerk Components._
 - [Clerk Mirage](./examples/mirage): _Multi-step authentication form._
