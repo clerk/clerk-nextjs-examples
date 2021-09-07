@@ -20,10 +20,20 @@ enum FormSteps {
   CODE,
 }
 
+type CustomError = {
+  type: string;
+  message: string;
+};
+
 function SignInForm() {
   const router = useRouter();
   const signIn = useSignIn();
   const clerk = useClerk();
+
+  const [error, setError] = useState<CustomError | null>(null);
+  const setClerkError = (error: any, type: string) =>
+    // @ts-ignore
+    setError({ type, message: error.longMessage });
 
   const [formStep, setFormStep] = useState(FormSteps.EMAIL);
   const {
@@ -53,8 +63,17 @@ function SignInForm() {
   };
 
   const emailVerification = async function () {
-    await sendClerkOtp();
-    setFormStep((formStep) => formStep + 1);
+    try {
+      setError(null);
+      await sendClerkOtp();
+      setFormStep((formStep) => formStep + 1);
+    } catch (err) {
+      if (err.errors) {
+        setClerkError(err.errors[0], "email");
+      } else {
+        throw err;
+      }
+    }
   };
 
   const verifyOtp = async function () {
@@ -76,6 +95,7 @@ function SignInForm() {
             <>
               <Title>Sign in</Title>
               <Input
+                errorText={error?.message}
                 helperText="Email address"
                 {...register("email", {
                   required: true,

@@ -119,7 +119,6 @@ function SignUpForm() {
       firstName,
       lastName,
     });
-
     if (signUpAttempt.status === "complete") {
       await clerk.setSession(signUpAttempt.createdSessionId);
       const photo = getValues("photo")?.[0];
@@ -213,7 +212,11 @@ function SignUpForm() {
             <>
               <Title>Create your username</Title>
               <Input
-                {...register("username", { required: true, minLength: 2 })}
+                {...register("username", {
+                  required: true,
+                  minLength: 4,
+                  maxLength: 15,
+                })}
               />
               <Button
                 onClick={nextFormStep}
