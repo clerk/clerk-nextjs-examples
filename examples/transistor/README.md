@@ -1,6 +1,6 @@
 # Clerk Transistor Starter
 
-![Preview](../docs/transistor.gif)
+![Preview](../../docs/transistor.gif)
 
 This Next.js project demonstrates how to use [Clerk Components](http://www.clerk.dev?utm_source=github&utm_medium=starters&utm_campaign=transistor) to build a comprehensive, custom sign-up and sign-in experience with minimum effort.
 
