@@ -35,7 +35,8 @@
   transform: translateY(20px);
 }
 
-.cl-auth-form-body label:focus-within > span {
+.cl-auth-form-body label:focus-within > span,
+.cl-auth-form-body input:not([value=""]) + span {
   transform: translateY(0px);
 }
 
