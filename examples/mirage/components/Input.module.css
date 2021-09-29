@@ -25,7 +25,8 @@
 
 .errorText {
   display: block;
-  color: black;
-  align-self: flex-start;
+  color: #7431d7;
+  align-self: center;
   font-weight: 600;
+  margin-bottom: 12px;
 }

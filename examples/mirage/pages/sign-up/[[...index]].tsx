@@ -1,7 +1,7 @@
-import { SignUp } from "../../client/components/SignUp";
+import { SignUpWithClerk } from "../../components/signUp";
 
-const SignUpPage = () => {
-  return <SignUp />;
+const SignUpFormPage = () => {
+  return <SignUpWithClerk />;
 };
 
-export default SignUpPage;
+export default SignUpFormPage;

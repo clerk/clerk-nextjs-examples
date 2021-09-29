@@ -1,7 +1,7 @@
-import { SignInFormWithClerk } from "../../client/components/SignInForm";
+import { SignInWithClerk } from "../../components/SignIn";
 
 const SigninPage = () => {
-  return <SignInFormWithClerk />;
+  return <SignInWithClerk />;
 };
 
 export default SigninPage;

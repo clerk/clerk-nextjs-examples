@@ -1,8 +1,9 @@
-import styles from "./Home.module.css";
+import { UserButton } from "@clerk/nextjs";
 import NakedLogo from "../assets/svg/naked-logo.svg";
-import { UserButton } from "@clerk/clerk-react";
 
-export function Home() {
+import styles from "./Dashboard.module.css";
+
+export function Dashboard() {
   return (
     <div className={styles.fullWidth}>
       <header>

@@ -7,13 +7,20 @@ const Input = React.forwardRef<
     helperText?: string;
     errorText?: string;
     onPaste?: React.ClipboardEventHandler<HTMLInputElement>;
+    autoFocus?: boolean;
   }
->(({ helperText, errorText, onPaste, ...rest }, ref) => {
+>(({ autoFocus = true, helperText, errorText, onPaste, ...rest }, ref) => {
   return (
     <>
-      {errorText && <span className={styles.errorText}>{errorText}</span>}
       {helperText && <span className={styles.helperText}>{helperText}</span>}
-      <input onPaste={onPaste} className={styles.input} ref={ref} {...rest} />
+      <input
+        autoFocus={autoFocus}
+        onPaste={onPaste}
+        className={styles.input}
+        ref={ref}
+        {...rest}
+      />
+      {errorText && <span className={styles.errorText}>{errorText}</span>}
     </>
   );
 });

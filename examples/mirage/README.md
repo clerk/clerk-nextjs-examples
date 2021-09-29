@@ -2,7 +2,9 @@
 
 ![Preview](../../docs/mirage.gif)
 
-This Next.js project demonstrates how to use [@clerk/clerk-nextjs](https://docs.clerk.dev/get-started/nextjs?utm_source=github&utm_medium=starters&utm_campaign=mirage) together with some ClerkJS JavaScript methods to build a wizard sign-up form with two-factor authentication and profile attributes.
+This Next.js project demonstrates how to use [@clerk/clerk-nextjs](https://docs.clerk.dev/get-started/nextjs?utm_source=github&utm_medium=starters&utm_campaign=mirage) together with the core ClerkJS SDK methods to build a custom sign-up and sign-in wizard with two-factor authentication and user profile attributes.
+
+The custom sign-in flow is implemented in a single component to demonstrate how to use ClerkJS with minimum effort. On the contrary, the custom sign-up flow has been fully componetized and leverages ClerkJS frontend state management. We also used [React-hook-form](https://react-hook-form.com) to build our forms.
 
 [![Open in VS Code](https://open.vscode.dev/badges/open-in-vscode.svg)](https://open.vscode.dev/clerkinc/clerk-nextjs-examples)
 
@@ -31,6 +33,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
 
 ## Live demo
+
 https://nextjs.mirage.clerk.app/
 
 ## Learn More

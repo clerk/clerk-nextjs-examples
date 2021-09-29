@@ -1,12 +1,13 @@
 import formStyles from "./layout/FormLayout.module.css";
-import { useClerk, useSignIn } from "@clerk/clerk-react";
-import { KeyboardEvent, useState } from "react";
+import { useClerk, useSignIn, withClerk } from "@clerk/nextjs";
+import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { useRouter } from "next/router";
 import { Button } from "./Button";
 import { Input } from "./Input";
 import { FormLayout } from "./layout/FormLayout";
 import { Title } from "./Title";
+import { parseError, APIResponseError } from "../utils/errors";
 
 const SIMPLE_REGEX_PATTERN = /^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;
 
@@ -20,36 +21,23 @@ enum FormSteps {
   CODE,
 }
 
-type CustomError = {
-  type: string;
-  message: string;
-};
-
-function SignInForm() {
+function SignIn() {
   const router = useRouter();
   const signIn = useSignIn();
   const clerk = useClerk();
-
-  const [error, setError] = useState<CustomError | null>(null);
-  const setClerkError = (error: any, type: string) =>
-    // @ts-ignore
-    setError({ type, message: error.longMessage });
 
   const [formStep, setFormStep] = useState(FormSteps.EMAIL);
   const {
     register,
     getValues,
     trigger,
-    formState: { errors: formValidationErrors },
+    setError,
+    clearErrors,
+    handleSubmit,
+    formState: { errors, isSubmitting },
   } = useForm<SignInInputs>({ mode: "all" });
 
-  const preventDefaultSubmission = (e: KeyboardEvent<HTMLFormElement>) => {
-    if (e.key == "Enter") {
-      e.preventDefault();
-    }
-  };
-
-  const sendClerkOtp = async function () {
+  const sendOtp = async function () {
     const emailAddress = getValues("email");
     const signInAttempt = await signIn.create({
       identifier: emailAddress,
@@ -62,40 +50,60 @@ function SignInForm() {
     });
   };
 
-  const emailVerification = async function () {
+  const verifyEmail = async function () {
     try {
-      setError(null);
-      await sendClerkOtp();
+      clearErrors();
+      await sendOtp();
       setFormStep((formStep) => formStep + 1);
     } catch (err) {
-      if (err.errors) {
-        setClerkError(err.errors[0], "email");
-      } else {
-        throw err;
-      }
+      setError("email", {
+        type: "manual",
+        message: parseError(err as APIResponseError),
+      });
     }
   };
 
   const verifyOtp = async function () {
     const otp = getValues("code");
-    const signUpAttempt = await signIn.attemptFirstFactor({
-      strategy: "email_code",
-      code: otp,
-    });
-    if (signUpAttempt.status === "complete") {
-      clerk.setSession(signUpAttempt.createdSessionId, () => router.push("/"));
+    let signUpAttempt;
+
+    try {
+      signUpAttempt = await signIn.attemptFirstFactor({
+        strategy: "email_code",
+        code: otp,
+      });
+    } catch (err) {
+      setError("code", {
+        type: "manual",
+        message: parseError(err as APIResponseError),
+      });
+    }
+
+    if (signUpAttempt?.status === "complete") {
+      clerk.setSession(signUpAttempt.createdSessionId, () =>
+        router.push("/dashboard")
+      );
+    }
+  };
+
+  const onSubmit = () => {
+    switch (formStep) {
+      case FormSteps.EMAIL:
+        return verifyEmail();
+      case FormSteps.CODE:
+        return verifyOtp();
     }
   };
 
   return (
     <FormLayout type="sign-in">
-      <form onKeyPress={preventDefaultSubmission}>
+      <form onSubmit={handleSubmit(onSubmit)}>
         <div className={formStyles.fields}>
           {formStep === FormSteps.EMAIL && (
             <>
               <Title>Sign in</Title>
               <Input
-                errorText={error?.message}
+                errorText={errors.email?.message}
                 helperText="Email address"
                 {...register("email", {
                   required: true,
@@ -104,10 +112,8 @@ function SignInForm() {
               />
               <Button
                 disabled={
-                  !getValues("email") || Boolean(formValidationErrors["email"])
+                  isSubmitting || !getValues("email") || Boolean(errors.email)
                 }
-                onClick={async () => await emailVerification()}
-                onKeyPress={async () => await emailVerification()}
               >
                 Continue
               </Button>
@@ -117,10 +123,10 @@ function SignInForm() {
             <>
               <Title>Enter the confirmation code</Title>
               <span className={formStyles.sub}>
-                A 6-digit code was just sent to <br />
-                {getValues("email")}
+                A 6-digit code was just sent to {getValues("email")}
               </span>
               <Input
+                errorText={errors.code?.message}
                 {...register("code", {
                   required: true,
                   maxLength: 6,
@@ -128,13 +134,7 @@ function SignInForm() {
                 })}
                 onPaste={async () => await trigger("code")}
               />
-              <Button
-                disabled={
-                  !getValues("code") || Boolean(formValidationErrors["code"])
-                }
-                onClick={async () => await verifyOtp()}
-                onKeyPress={async () => await verifyOtp()}
-              >
+              <Button disabled={!getValues("code") || Boolean(errors.code)}>
                 Continue
               </Button>
             </>
@@ -145,4 +145,4 @@ function SignInForm() {
   );
 }
 
-export const SignInFormWithClerk = SignInForm;
+export const SignInWithClerk = withClerk(SignIn);

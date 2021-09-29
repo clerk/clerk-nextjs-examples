@@ -1,8 +1,8 @@
-import { Home } from "../components/Home";
+import { Dashboard } from "../components/Dashboard";
 import type { NextPage } from "next";
 
 const Index: NextPage = () => {
-  return <Home />;
+  return <Dashboard />;
 };
 
 export default Index;
