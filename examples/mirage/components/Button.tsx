@@ -8,7 +8,7 @@ const Button = React.forwardRef<
   } & React.ButtonHTMLAttributes<HTMLButtonElement>
 >(({ children, ...rest }, ref) => {
   return (
-    <button type="button" {...rest} className={styles.button} ref={ref}>
+    <button type="submit" {...rest} className={styles.button} ref={ref}>
       {children}
     </button>
   );

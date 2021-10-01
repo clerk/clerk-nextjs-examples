@@ -1,4 +1,3 @@
-// import Link, { LinkProps } from "next/link";
 import Link from "next/link";
 import React from "react";
 import styles from "./CustomLink.module.css";

@@ -1,5 +1,5 @@
 import { SignIn } from "@clerk/nextjs";
-import { AuthLayout } from "../../client/layouts/AuthLayout";
+import { AuthLayout } from "../../layouts/AuthLayout";
 
 const SignInPage = () => {
   return (

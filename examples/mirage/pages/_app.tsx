@@ -1,32 +1,37 @@
-import "../client/styles/index.css";
+import "../styles/index.css";
 import type { AppProps } from "next/app";
-import { ClerkProvider, SignedIn, SignedOut } from "@clerk/nextjs";
-import { Home } from "../client/components/Home";
-import { GithubLink } from "../client/components/clerk/GithubLink";
 import { useRouter } from "next/router";
-import SignUpPage from "./sign-up/[[...index]]";
-import { MainLayout } from "../client/components/layout/MainLayout";
+import {
+  ClerkProvider,
+  RedirectToSignUp,
+  SignedIn,
+  SignedOut,
+} from "@clerk/nextjs";
+import { GithubLink } from "../components/GithubLink";
+import { MainLayout } from "../components/layout/MainLayout";
 
 function MyApp({ Component, pageProps }: AppProps) {
-  const router = useRouter();
+  const { pathname } = useRouter();
+
+  const publicPages = ["/", "/sign-in/[[...index]]", "/sign-up/[[...index]]"];
 
   return (
     <ClerkProvider>
       <MainLayout>
         <SignedIn>
-          <Home {...pageProps} />
+          <Component {...pageProps} />
         </SignedIn>
         <SignedOut>
-          {router.pathname === "/" ? (
-            <SignUpPage />
-          ) : (
+          {publicPages.includes(pathname) ? (
             <Component {...pageProps} />
+          ) : (
+            <RedirectToSignUp />
           )}
         </SignedOut>
       </MainLayout>
       <footer>
         <GithubLink
-          label="Mirage is a live demo that showcases Clerk components"
+          label="Mirage is a live demo that showcases how to build a custom sign up experience with Clerk"
           repoLink="https://github.com/clerkinc/clerk-nextjs-examples/tree/main/examples/mirage"
         />
       </footer>
