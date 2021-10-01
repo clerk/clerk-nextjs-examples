@@ -1,6 +1,6 @@
 # Clerk Next.js Examples
 
-This repository holds sample code for different types of authentication form flows you might need for your application. All built using [Clerk](https://clerk.dev)!
+This repository holds sample code for different types of authentication flows you might need for your application. All built using [Clerk](https://clerk.dev)!
 
 <div style="display: flex;gap:10px">
     <img height="250" src="./docs/transistor.gif"/>
@@ -23,7 +23,7 @@ To sign up, go to [https://clerk.dev](https://clerk.dev?utm_source=github&utm_me
 
 ## Using the examples
 
-Each example is a fully runnable application which you can use either as a starter or as guidelines on how you can utilize Clerk based on your requirements. In each examples folder, you will find instructions on how to bootstrap the application.
+Each example is a fully runnable application which you can use either as a starter or a guideline on how you can utilize Clerk based on your requirements. In each example folder, you will find instructions on how to bootstrap the application.
 
 ## Having trouble ?
 
