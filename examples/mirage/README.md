@@ -16,6 +16,10 @@ The Mirage example requires a few Clerk instance settings to be set. Go to your 
 
 <img height="300px" src="../../docs/mirage-instance-settings.png" />
 
+Then Go to your instance dashboard page under **Settings** → **URL and Redirects** and set `Sign-in` and `Sign-up` urls as shown below:
+
+<img height="300px" src="../../docs/mirage-url-and-redirects-settings.png"/>
+
 ### Development Setup
 
 1. Follow the instructions at the [getting started guide](https://docs.clerk.dev/get-started/nextjs?utm_source=github&utm_medium=starters&utm_campaign=mirage) for Next.js to setup Clerk.
