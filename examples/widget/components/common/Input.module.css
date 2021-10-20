@@ -1,0 +1,58 @@
+.label {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.input {
+  display: block;
+  width: 100%;
+  font-size: 12px;
+  font-weight: 400;
+  margin-top: 4px;
+  border-radius: 6px;
+  padding: 10px 16px;
+  border: 1px solid rgba(0, 0, 0, 0.16);
+}
+
+.inputWithError {
+  border: 1px solid var(--color-error);
+}
+
+.input[type="password"] {
+  letter-spacing: 3px;
+}
+
+.inputContainer {
+  position: relative;
+}
+
+.inputField {
+  margin-bottom: 16px;
+}
+
+.inputField :global .errorDisplay {
+  opacity: 0;
+  transform: scale(1);
+}
+
+.inputField :global .errorDisplay-enter-done {
+  opacity: 1;
+  transform: translateX(0);
+  transition: opacity 200ms, transform 200ms;
+}
+
+.inputWithBadge {
+  padding-left: 52px;
+}
+
+.badge {
+  border-radius: 6px 0px 0px 6px;
+  width: 40px;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.04);
+  color: rgba(0, 0, 0, 0.5);
+}

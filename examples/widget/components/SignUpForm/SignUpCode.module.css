@@ -1,0 +1,10 @@
+.actionButton {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.actionButton button {
+  display: flex;
+  justify-content: center;
+  width: 130px;
+}

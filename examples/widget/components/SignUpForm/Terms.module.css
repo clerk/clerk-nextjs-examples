@@ -1,0 +1,9 @@
+.terms {
+  color: var(--color-black-lighter);
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.terms > span > span {
+  text-decoration: underline;
+}
