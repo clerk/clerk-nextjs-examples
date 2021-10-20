@@ -1,0 +1,19 @@
+.formLayout {
+  margin: 0 auto;
+  max-width: 360px;
+}
+
+.formLayout > div,
+.formLayout > form > div {
+  width: 100%;
+  margin-bottom: 32px;
+}
+
+.actionButton button {
+  width: 100%;
+}
+
+.backLink {
+  background: none;
+  color: var(--color-primary);
+}

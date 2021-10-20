@@ -1,0 +1,16 @@
+.button {
+  background: var(--color-primary);
+  color: var(--color-white);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 20px;
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 12px;
+}
+
+.button:focus-within,
+.button:focus {
+  filter: drop-shadow(0px 3px 3px var(--color-primary));
+}

@@ -1,0 +1,17 @@
+.titleContainer {
+  margin-bottom: 32px;
+}
+
+.title {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 28px;
+  margin-bottom: 2px;
+}
+
+.subtitle {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: var(--color-black-lighter);
+}

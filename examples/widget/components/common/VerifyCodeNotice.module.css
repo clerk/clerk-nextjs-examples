@@ -1,0 +1,26 @@
+.emailNotice {
+  color: var(--color-black-lighter);
+}
+
+.emailAddress {
+  color: var(--color-black);
+}
+
+.resendCode {
+  display: block;
+  color: var(--color-primary);
+  font-size: 12px;
+  margin-top: 8px;
+  background: none;
+  border: none;
+  font-weight: 500;
+}
+
+.resendCode:focus,
+.resendCode:hover {
+  text-decoration: underline;
+}
+
+.resendCode:disabled {
+  opacity: 0.5;
+}

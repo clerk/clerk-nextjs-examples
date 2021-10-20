@@ -1,0 +1,25 @@
+.background {
+  min-height: 100vh;
+  background: linear-gradient(
+    90deg,
+    var(--color-primary) 50%,
+    var(--color-white) 50%
+  );
+}
+
+.content {
+  max-width: 1080px;
+  padding-top: 64px;
+  padding-bottom: 64px;
+  margin: 0 auto;
+  display: flex;
+  height: 100%;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+@media screen and (min-width: 1260px) {
+  .content {
+    justify-content: space-between;
+  }
+}

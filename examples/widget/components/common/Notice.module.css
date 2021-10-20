@@ -1,0 +1,20 @@
+.notice {
+  display: flex;
+  background: rgba(0, 0, 0, 0.04);
+  border-radius: 3px;
+  padding: 14px 18px;
+  line-height: 16px;
+}
+
+.notice span {
+  font-size: 12px;
+  margin-left: 6px;
+  color: rgba(0, 0, 0, 0.8);
+}
+
+.notice a {
+  color: var(--color-primary);
+  font-size: 12px;
+  text-decoration: underline;
+  margin-left: 4px;
+}

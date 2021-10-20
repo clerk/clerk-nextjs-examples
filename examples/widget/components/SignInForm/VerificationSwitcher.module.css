@@ -1,0 +1,15 @@
+.switchVerificationMethod {
+  display: block;
+  color: var(--color-primary);
+  font-size: 12px;
+  margin-top: 8px;
+  background: none;
+  border: none;
+  font-weight: 500;
+  margin: 0 auto;
+}
+
+.switchVerificationMethod:focus,
+.switchVerificationMethod:hover {
+  text-decoration: underline;
+}
