@@ -65,17 +65,17 @@
     "@babel/helper-validator-identifier" "^7.14.9"
     to-fast-properties "^2.0.0"
 
-"@clerk/clerk-react@1.22.2":
-  version "1.22.2"
-  resolved "https://registry.yarnpkg.com/@clerk/clerk-react/-/clerk-react-1.22.2.tgz#02cf9e70836273bd0dc40edd5dfbe719fc5c92d5"
-  integrity sha512-BKxSt6S8tw06A0jg6kCUtUtq/vVJBG5oE0JAVOlXG2AaQFKgnT6u8RKsCLlAWKdkOxXDcOlKZlFblAcfMxhhEw==
+"@clerk/clerk-react@2.0.1-staging.0":
+  version "2.0.1-staging.0"
+  resolved "https://registry.yarnpkg.com/@clerk/clerk-react/-/clerk-react-2.0.1-staging.0.tgz#f2e46136a41ab9fde50afffb468c0796d1a87a29"
+  integrity sha512-35NNYClM8sG7/frsNQEIv1gXGX8tJ8SBK4863k8G3X18z+4BlQXPr4d+iD7L/lDV1E5SIoJrUMXUeOzzkl2x8w==
   dependencies:
-    "@clerk/types" "1.14.2"
+    "@clerk/types" "1.14.3"
 
-"@clerk/clerk-sdk-node@^0.5.1":
-  version "0.5.2"
-  resolved "https://registry.yarnpkg.com/@clerk/clerk-sdk-node/-/clerk-sdk-node-0.5.2.tgz#31da69e43b2a1952774d4e757cf5d0583a577c7b"
-  integrity sha512-XstUStGZs6tpKmp5MdHda0f6Xw1IawEb2N/M/L43xzjZPFBYrJ0GFX9jyQZ9cBk/g4w2rcanP/+8THD7adcX9g==
+"@clerk/clerk-sdk-node@^2.0.2":
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/@clerk/clerk-sdk-node/-/clerk-sdk-node-2.0.2.tgz#3fa3c2af0e8d65594ebffbbb41b1a5ee38a01b9f"
+  integrity sha512-tdLGMZDUIWS/ZK6C3Q0v9JRf6XMsFK7G9LXuEP+2U5AyUz32NJF7qM/WmhvMX54tdrZW656JUOq4z+iFNxosiA==
   dependencies:
     "@types/cookies" "^0.7.6"
     "@types/jsonwebtoken" "^8.5.4"
@@ -87,20 +87,20 @@
     lodash "^4.17.21"
     snakecase-keys "^3.2.1"
 
-"@clerk/nextjs@^1.5.2":
-  version "1.5.2"
-  resolved "https://registry.yarnpkg.com/@clerk/nextjs/-/nextjs-1.5.2.tgz#e1d640727d42b968d8b37c84f42bbca6e6f6a4a9"
-  integrity sha512-YmT9Ib2s+FPirRKWIpoYiDVnafkRi6swgJRZD3MkiMdkHiE6Dn8rr+SPqCb2Fex4EdlCkIdlbBaUMPnMEOP6dw==
+"@clerk/nextjs@^2.0.1":
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/@clerk/nextjs/-/nextjs-2.0.1.tgz#fa527a43f8e1f0ffd678483245df59a681449d2f"
+  integrity sha512-fgzD4UZ6l1YCGgtenBqj3ISKD8YUCfuybDMpv/9U4jJC9ZwZDwrJrEzb4geenefqypEP0EVWcnO7Gsitbyzgfw==
   dependencies:
-    "@clerk/clerk-react" "1.22.2"
-    "@clerk/clerk-sdk-node" "^0.5.1"
-    "@clerk/types" "1.14.2"
+    "@clerk/clerk-react" "2.0.1-staging.0"
+    "@clerk/clerk-sdk-node" "^2.0.2"
+    "@clerk/types" "1.14.3"
     tslib "^2.3.1"
 
-"@clerk/types@1.14.2":
-  version "1.14.2"
-  resolved "https://registry.yarnpkg.com/@clerk/types/-/types-1.14.2.tgz#9871e936d8d8c9e94270ce2b0cabb6eb6a84fc3a"
-  integrity sha512-EfIB2tIiRAglueqzw/JAkzIAL9XkjtDsytx/1+RgaSLm6IJymoOw0v0AHQTN2Le95hGzEhBdxjBq2w9/TrCx2Q==
+"@clerk/types@1.14.3":
+  version "1.14.3"
+  resolved "https://registry.yarnpkg.com/@clerk/types/-/types-1.14.3.tgz#e0b7b22bf473931b43016f1a84e4c0a17b60db2c"
+  integrity sha512-7Lr8oVnYyE/Agkvrrm0poGKxivvnOO/C0/P7gBls2idlIYBvZyfl+MistdJVtjqdnORHjO2RKhJMINrBRYsXMQ==
 
 "@eslint/eslintrc@^1.0.3":
   version "1.0.3"
@@ -369,9 +369,9 @@
   integrity sha512-YATxVxgRqNH6nHEIsvg6k2Boc1JHI9ZbH5iWFFv/MTkchz3b1ieGDa5T0a9RznNdI0KhVbdbWSN+KWWrQZRxTw==
 
 "@types/node@*":
-  version "16.11.1"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-16.11.1.tgz#2e50a649a50fc403433a14f829eface1a3443e97"
-  integrity sha512-PYGcJHL9mwl1Ek3PLiYgyEKtwTMmkMw4vbiyz/ps3pfdRYLVv+SN7qHVAImrjdAXxgluDEw6Ph4lyv+m9UpRmA==
+  version "16.11.4"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-16.11.4.tgz#90771124822d6663814f7c1c9b45a6654d8fd964"
+  integrity sha512-TMgXmy0v2xWyuCSCJM6NCna2snndD8yvQF67J29ipdzMcsPa9u+o0tjF5+EQNdhcuZplYuouYqpc4zcd5I6amQ==
 
 "@types/prop-types@*":
   version "15.7.4"
@@ -830,9 +830,9 @@ camelcase@^5.3.1:
   integrity sha512-L28STB170nwWS63UjtlEOE3dldQApaJXZkOI1uMFfzf3rRuPegHaHesyee+YxQ+W6SvRDQV6UrdOdRiR153wJg==
 
 caniuse-lite@^1.0.30001202, caniuse-lite@^1.0.30001219, caniuse-lite@^1.0.30001228:
-  version "1.0.30001269"
-  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001269.tgz#3a71bee03df627364418f9fd31adfc7aa1cc2d56"
-  integrity sha512-UOy8okEVs48MyHYgV+RdW1Oiudl1H6KolybD6ZquD0VcrPSgj25omXO1S7rDydjpqaISCwA8Pyx+jUQKZwWO5w==
+  version "1.0.30001271"
+  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001271.tgz#0dda0c9bcae2cf5407cd34cac304186616cc83e8"
+  integrity sha512-BBruZFWmt3HFdVPS8kceTBIguKxu4f99n5JNp06OlPD/luoAMIaIK5ieV5YjnBLH3Nysai9sxj9rpJj4ZisXOA==
 
 chalk@2.4.2, chalk@^2.0.0:
   version "2.4.2"
@@ -1170,9 +1170,9 @@ ecdsa-sig-formatter@1.0.11:
     safe-buffer "^5.0.1"
 
 electron-to-chromium@^1.3.723:
-  version "1.3.873"
-  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.873.tgz#c238c9199e4951952fe815a65c1beab5db4826b8"
-  integrity sha512-TiHlCgl2uP26Z0c67u442c0a2MZCWZNCRnPTQDPhVJ4h9G6z2zU0lApD9H0K9R5yFL5SfdaiVsVD2izOY24xBQ==
+  version "1.3.877"
+  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.877.tgz#956870eea7c9d8cf43cc54ea40687fee4dc0c12a"
+  integrity sha512-fT5mW5Giw5iyVukeHb2XvB4joBKvzHtl8Vs3QzE7APATpFMt/T7RWyUcIKSZzYkKQgpMbu+vDBTCHfQZvh8klA==
 
 elliptic@^6.5.3:
   version "6.5.4"
