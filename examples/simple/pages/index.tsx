@@ -4,6 +4,11 @@ import type { NextPage } from "next";
 import styles from "../styles/Home.module.css";
 import Link from "next/link";
 
+const thisRepoLink =
+  "https://github.com/clerkinc/clerk-nextjs-examples/tree/main/examples/simple";
+
+const allExamplesLink = "https://github.com/clerkinc/clerk-nextjs-examples";
+
 const Home: NextPage = () => {
   return (
     <div className={styles.container}>
@@ -39,13 +44,12 @@ const SignedOutCards = () => {
         <h2>Sign in &rarr;</h2>
         <p>Show the sign in modal</p>
       </a>
-
       <a onClick={() => openSignUp()} className={styles.card}>
         <h2>Sign up &rarr;</h2>
         <p>Show the sign up modal</p>
       </a>
       <a
-        href="https://github.com/clerkinc/clerk-nextjs-examples"
+        href={thisRepoLink}
         className={styles.card}
         target="_blank"
         rel="noreferrer"
@@ -54,7 +58,7 @@ const SignedOutCards = () => {
         <p>All this in just a few lines.</p>
       </a>
       <a
-        href="https://github.com/clerkinc/clerk-nextjs-examples"
+        href={allExamplesLink}
         className={styles.card}
         target="_blank"
         rel="noreferrer"
@@ -82,7 +86,7 @@ const SignedInCards = () => {
         </a>
       </Link>
       <a
-        href="https://github.com/clerkinc/clerk-nextjs-examples"
+        href={thisRepoLink}
         className={styles.card}
         target="_blank"
         rel="noreferrer"
@@ -91,7 +95,7 @@ const SignedInCards = () => {
         <p>All this in just a few lines.</p>
       </a>
       <a
-        href="https://github.com/clerkinc/clerk-nextjs-examples"
+        href={allExamplesLink}
         className={styles.card}
         target="_blank"
         rel="noreferrer"

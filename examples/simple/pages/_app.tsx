@@ -44,7 +44,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         <footer>
           <GithubLink
             label="'Simple' is a live demo that showcases Clerk components"
-            repoLink="https://github.com/clerkinc/clerk-nextjs-examples/tree/main/examples/transistor"
+            repoLink="https://github.com/clerkinc/clerk-nextjs-examples/tree/main/examples/simple"
           />
         </footer>
       </ClerkLoaded>
