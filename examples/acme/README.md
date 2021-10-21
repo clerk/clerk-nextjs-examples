@@ -1,6 +1,6 @@
 # Clerk Acme Starter
 
-![Preview](../../docs/acme.gif)
+![Preview](../../docs/acme.png)
 
 This Next.js project demonstrates how to use [Clerk Components](http://www.clerk.dev?utm_source=github&utm_medium=starters&utm_campaign=acme) to build a comprehensive, custom sign-up and sign-in experience with minimum effort.
 

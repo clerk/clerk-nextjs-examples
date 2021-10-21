@@ -1,6 +1,6 @@
 # Clerk Widget Starter
 
-![Preview](../../docs/widget.gif)
+![Preview](../../docs/widget.png)
 
 This Next.js project demonstrates how to use [@clerk/clerk-nextjs](https://docs.clerk.dev/get-started/nextjs?utm_source=github&utm_medium=starters&utm_campaign=widget) together with the core ClerkJS SDK methods to build a custom sign-up and sign-in screen with custom user attributes.
 
