@@ -1,4 +1,10 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Clerk Simple Starter
+
+![Preview](../../docs/simple.png)
+
+This Next.js project demonstrates how to use [@clerk/clerk-nextjs](https://docs.clerk.dev/get-started/nextjs?utm_source=github&utm_medium=starters&utm_campaign=simple) together with Clerk Components showcasing Clerk's capabilities.
+
+[![Open in VS Code](https://open.vscode.dev/badges/open-in-vscode.svg)](https://open.vscode.dev/clerkinc/clerk-nextjs-examples)
 
 ## Getting Started
 

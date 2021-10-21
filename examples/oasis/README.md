@@ -1,6 +1,6 @@
 # Clerk Oasis Starter
 
-![Preview](../../docs/oasis.gif)
+![Preview](../../docs/oasis.png)
 
 This Next.js project demonstrates how to use [@clerk/clerk-nextjs](https://docs.clerk.dev/get-started/nextjs?utm_source=github&utm_medium=starters&utm_campaign=oasis) together with the core ClerkJS SDK methods to build a custom sign-up and sign-in wizard with two-factor authentication and user profile attributes.
 
