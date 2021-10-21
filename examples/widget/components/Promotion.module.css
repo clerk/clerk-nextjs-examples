@@ -1,0 +1,46 @@
+.promotion > div {
+  margin-bottom: 32px;
+  color: var(--color-white);
+}
+
+.video {
+  width: 360px;
+  height: 200px;
+  background: black;
+  border-radius: 6px;
+}
+
+.video iframe {
+  max-width: 360px;
+  max-height: 200px;
+  border-radius: 6px;
+}
+
+.benefitsListItem {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+
+.benefitsListItem svg {
+  align-self: flex-start;
+  margin-top: 2px;
+}
+
+.benefitsContent {
+  margin-left: 18px;
+}
+
+.benefitsTitle {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.benefitsSubtitle {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: var(--color-white-lighter);
+}
