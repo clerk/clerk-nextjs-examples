@@ -1,4 +1,5 @@
-body {
+body,
+html {
   margin: 0;
   font-family: "PT Sans", sans-serif;
   -webkit-font-smoothing: antialiased;

@@ -1,0 +1,31 @@
+.fullWidth {
+  width: 100%;
+}
+
+.logoRow {
+  padding: 28px 64px 36px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav {
+  border-bottom: 1px solid rgb(49 46 152 / 30%);
+  padding: 0 36px;
+}
+
+.navButton {
+  border: none;
+  background: none;
+  color: rgb(49 46 152);
+  padding: 16px 0px;
+  margin: 0px 32px;
+  cursor: pointer;
+  border-bottom: 1px solid rgb(49 46 152);
+  font-size: 16px;
+  font-family: "PT Sans";
+  font-weight: 500;
+}
+
+.main {
+  padding: 46px 64px;
+}

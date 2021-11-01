@@ -957,17 +957,17 @@
     "@babel/helper-validator-identifier" "^7.14.9"
     to-fast-properties "^2.0.0"
 
-"@clerk/clerk-react@2.0.1-staging.0":
-  version "2.0.1-staging.0"
-  resolved "https://registry.yarnpkg.com/@clerk/clerk-react/-/clerk-react-2.0.1-staging.0.tgz#f2e46136a41ab9fde50afffb468c0796d1a87a29"
-  integrity sha512-35NNYClM8sG7/frsNQEIv1gXGX8tJ8SBK4863k8G3X18z+4BlQXPr4d+iD7L/lDV1E5SIoJrUMXUeOzzkl2x8w==
-  dependencies:
-    "@clerk/types" "1.14.3"
-
-"@clerk/clerk-sdk-node@^2.0.2":
+"@clerk/clerk-react@2.0.2":
   version "2.0.2"
-  resolved "https://registry.yarnpkg.com/@clerk/clerk-sdk-node/-/clerk-sdk-node-2.0.2.tgz#3fa3c2af0e8d65594ebffbbb41b1a5ee38a01b9f"
-  integrity sha512-tdLGMZDUIWS/ZK6C3Q0v9JRf6XMsFK7G9LXuEP+2U5AyUz32NJF7qM/WmhvMX54tdrZW656JUOq4z+iFNxosiA==
+  resolved "https://registry.yarnpkg.com/@clerk/clerk-react/-/clerk-react-2.0.2.tgz#599f7ce3be481aa2b1e7738ec4a9a7dd87c179fa"
+  integrity sha512-+zy5pmfezl8zawvVcSb/guiMwu5o+QmokjGC+VGuW8yibJN+RBsyU6FO/IQdjzK1Wt4qomjVjkbbHKu5ILOfig==
+  dependencies:
+    "@clerk/types" "1.15.1"
+
+"@clerk/clerk-sdk-node@^2.1.0":
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/@clerk/clerk-sdk-node/-/clerk-sdk-node-2.1.0.tgz#f0749d1635eaf7ddd00aba96d4ec9fc28feef73d"
+  integrity sha512-+DFoG1esAq4Hevj//F+4yj7r6gxqCqob2j8q3tiOxiXRbX1AI5HCqfKd/z2xjFmZ7Z2s3WabiUNUivq0im1IeQ==
   dependencies:
     "@types/cookies" "^0.7.6"
     "@types/jsonwebtoken" "^8.5.4"
@@ -980,19 +980,19 @@
     snakecase-keys "^3.2.1"
 
 "@clerk/nextjs@^2.0.1":
-  version "2.0.1"
-  resolved "https://registry.yarnpkg.com/@clerk/nextjs/-/nextjs-2.0.1.tgz#fa527a43f8e1f0ffd678483245df59a681449d2f"
-  integrity sha512-fgzD4UZ6l1YCGgtenBqj3ISKD8YUCfuybDMpv/9U4jJC9ZwZDwrJrEzb4geenefqypEP0EVWcnO7Gsitbyzgfw==
+  version "2.0.3"
+  resolved "https://registry.yarnpkg.com/@clerk/nextjs/-/nextjs-2.0.3.tgz#78ddabc621cfe56c7b8d30cb50f81627ada00c51"
+  integrity sha512-Qe+gqhQTQxALaNDUOMj3qOSMPGI2mW69PGey7BBQ2SCxeFivYoejv2BVQYa4TKshBfH6nxNMUV894z58f0mc1g==
   dependencies:
-    "@clerk/clerk-react" "2.0.1-staging.0"
-    "@clerk/clerk-sdk-node" "^2.0.2"
-    "@clerk/types" "1.14.3"
+    "@clerk/clerk-react" "2.0.2"
+    "@clerk/clerk-sdk-node" "^2.1.0"
+    "@clerk/types" "1.15.1"
     tslib "^2.3.1"
 
-"@clerk/types@1.14.3":
-  version "1.14.3"
-  resolved "https://registry.yarnpkg.com/@clerk/types/-/types-1.14.3.tgz#e0b7b22bf473931b43016f1a84e4c0a17b60db2c"
-  integrity sha512-7Lr8oVnYyE/Agkvrrm0poGKxivvnOO/C0/P7gBls2idlIYBvZyfl+MistdJVtjqdnORHjO2RKhJMINrBRYsXMQ==
+"@clerk/types@1.15.1":
+  version "1.15.1"
+  resolved "https://registry.yarnpkg.com/@clerk/types/-/types-1.15.1.tgz#5f1b30aa2df8e2cd30442794195f2d925c66ff95"
+  integrity sha512-iCtNLwZ2j0VgrIycQ1yDdtXH3/gWUz5jSeNAfNr0wBsr+gPBzvL5adCqTD3y7hdl9GOYOQcwR558mex5WBJGEQ==
 
 "@eslint/eslintrc@^0.4.3":
   version "0.4.3"

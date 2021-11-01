@@ -49,3 +49,9 @@
   margin: 0 !important;
   background: none !important;
 }
+
+.cl-user-profile .cl-main {
+  margin: 3em 0 0 0 !important;
+  padding: 0 !important ;
+  width: inherit;
+}

@@ -2,20 +2,25 @@ import "../styles/globals.css";
 import "../styles/App.css";
 import type { AppProps } from "next/app";
 import { ClerkProvider, SignedIn, SignedOut } from "@clerk/nextjs";
-import { Home } from "../components/Home";
 import { useRouter } from "next/router";
 import SignUpPage from "./sign-up/[[...index]]";
 import SignInPage from "./sign-in/[[...index]]";
 import GithubLink from "../components/GithubLink";
 
-function MyApp({ pageProps }: AppProps) {
+const theme = {
+  general: {
+    fontFamily: '"PT Sans"',
+  },
+};
+
+function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter();
 
   return (
-    <ClerkProvider>
+    <ClerkProvider theme={theme}>
       <main>
         <SignedIn>
-          <Home {...pageProps} />
+          <Component {...pageProps} />
         </SignedIn>
         <SignedOut>
           {router.pathname.match("/sign-up") ? <SignUpPage /> : <SignInPage />}
