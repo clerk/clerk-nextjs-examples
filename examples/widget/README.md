@@ -6,6 +6,8 @@ This Next.js project demonstrates how to use [@clerk/clerk-nextjs](https://docs.
 
 The custom sign-in flow is implemented in a single component to demonstrate how to use ClerkJS with minimum effort. On the contrary, the custom sign-up flow has been fully componentized and leverages ClerkJS frontend state management. We also used [React-hook-form](https://react-hook-form.com) to build our forms.
 
+Additionally, the project demonstrates how to synchronize data between your back-end (server) and Clerk.dev. The recommended method for syncing user data is to set up a server endpoint which receives [Clerk webhooks](https://docs.clerk.dev/reference/webhooks) for user related events.
+
 [![Open in VS Code](https://open.vscode.dev/badges/open-in-vscode.svg)](https://open.vscode.dev/clerkinc/clerk-nextjs-examples)
 
 ## Getting Started
