@@ -6,6 +6,10 @@ This Next.js project demonstrates how to use [Clerk Components](http://www.clerk
 
 [![Open in VS Code](https://open.vscode.dev/badges/open-in-vscode.svg)](https://open.vscode.dev/clerkinc/clerk-nextjs-examples)
 
+## Live demo
+
+https://nextjs.acme.clerk.app/
+
 ## Getting Started
 
 First, run the development server:
@@ -19,10 +23,6 @@ yarn dev
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
-
-## Live demo
-
-https://nextjs.acme.clerk.app/
 
 ## Learn More
 

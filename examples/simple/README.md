@@ -6,6 +6,10 @@ This Next.js project demonstrates how to use [@clerk/clerk-nextjs](https://docs.
 
 [![Open in VS Code](https://open.vscode.dev/badges/open-in-vscode.svg)](https://open.vscode.dev/clerkinc/clerk-nextjs-examples)
 
+## Live demo
+
+https://nextjs.simple.clerk.app/
+
 ## Getting Started
 
 First, run the development server:

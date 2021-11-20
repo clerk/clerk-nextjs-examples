@@ -10,6 +10,10 @@ Additionally, the project demonstrates how to synchronize data between your back
 
 [![Open in VS Code](https://open.vscode.dev/badges/open-in-vscode.svg)](https://open.vscode.dev/clerkinc/clerk-nextjs-examples)
 
+## Live demo
+
+https://nextjs.widget.clerk.app/
+
 ## Getting Started
 
 ### Clerk Instance Setup
@@ -33,10 +37,6 @@ yarn dev
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
-
-## Live demo
-
-https://nextjs.widget.clerk.app/
 
 ## Learn More
 
