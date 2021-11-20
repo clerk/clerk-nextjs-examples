@@ -13,14 +13,14 @@ This repository holds sample code for different types of authentication flows yo
     </div>
 </div>
 
-## Live demo
+## Live demos
 
 - Clerk Acme - https://nextjs.acme.clerk.app/
 - Clerk Oasis - https://nextjs.oasis.clerk.app/
 - Clerk Widget - https://nextjs.widget.clerk.app/
 - Clerk Simple - https://nextjs.simple.clerk.app/
 
-## Examples code
+## Example code
 
 - [Clerk Acme](./examples/acme): _Sign up screen using the Clerk Components._
 - [Clerk Oasis](./examples/oasis): _Multi-step authentication form._
