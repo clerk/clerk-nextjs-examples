@@ -1,11 +1,11 @@
-import { useSignIn } from "@clerk/clerk-react";
+import {useSignIn} from "@clerk/clerk-react";
 import React from "react";
-import { SubmitHandler, useForm } from "react-hook-form";
-import { Button } from "../common/Button";
-import { Input } from "../common/Input";
-import { VerifyCodeNotice } from "../common/VerifyCodeNotice";
-import { APIResponseError, parseError } from "../utils/errors";
-import { Validations } from "../utils/formValidations";
+import {SubmitHandler, useForm} from "react-hook-form";
+import {Button} from "../common/Button";
+import {Input} from "../common/Input";
+import {VerifyCodeNotice} from "../common/VerifyCodeNotice";
+import {APIResponseError, parseError} from "../utils/errors";
+import {Validations} from "../utils/formValidations";
 
 import styles from "./SignInCode.module.css";
 
@@ -17,8 +17,8 @@ type SignInCodeProps = {
 export function SignInCode({
   emailAddress,
   onDone,
-}: SignInCodeProps): JSX.Element {
-  const signIn = useSignIn();
+}: SignInCodeProps) {
+  const { isLoaded, signIn } = useSignIn();
   const [isLoading, setIsLoading] = React.useState(false);
 
   const {
@@ -27,6 +27,10 @@ export function SignInCode({
     formState: { errors },
     setError,
   } = useForm<{ code: string }>();
+
+  if(!isLoaded) {
+    return null;
+  }
 
   const verifySignInCode: SubmitHandler<{ code: string }> = async function ({
     code,

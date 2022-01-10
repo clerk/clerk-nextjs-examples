@@ -1,10 +1,9 @@
 import "../styles/globals.css";
 import GithubLink from "../components/clerk/GithubLink";
 import Header from "../components/Header";
-import Link from "next/link";
-import type { AppProps } from "next/app";
-import { ClerkProvider, ClerkLoaded, SignedIn, SignedOut } from "@clerk/nextjs";
-import { useRouter } from "next/router";
+import type {AppProps} from "next/app";
+import {ClerkLoaded, ClerkProvider, SignedIn, SignedOut} from "@clerk/nextjs";
+import {useRouter} from "next/router";
 
 /**
  * List pages you want to be publicly accessible, or leave empty if
@@ -20,7 +19,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter();
 
   return (
-    <ClerkProvider>
+    <ClerkProvider {...pageProps}>
       <ClerkLoaded>
         <Header />
         {publicPages.includes(router.pathname) ? (

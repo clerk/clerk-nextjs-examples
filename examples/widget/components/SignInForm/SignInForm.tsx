@@ -3,18 +3,19 @@ import Logo from "../../assets/svg/Logo.svg";
 import ArrowLeft from "../../assets/svg/ArrowLeft.svg";
 
 import styles from "./SignInForm.module.css";
-import { Notice } from "../common/Notice";
-import { Title } from "../common/Title";
-import { Input } from "../common/Input";
-import { useClerk, useSignIn } from "@clerk/clerk-react";
-import { useRouter } from "next/router";
-import { useForm } from "react-hook-form";
-import { Button } from "../common/Button";
-import { APIResponseError, parseError } from "../utils/errors";
-import { SignInCode } from "./SignInCode";
-import { Validations } from "../utils/formValidations";
-import { SignInPassword } from "./SignInPassword";
-import { VerificationSwitcher } from "./VerificationSwitcher";
+import {Notice} from "../common/Notice";
+import {Title} from "../common/Title";
+import {Input} from "../common/Input";
+import {useSignIn} from "@clerk/nextjs";
+import {useRouter} from "next/router";
+import {useForm} from "react-hook-form";
+import {Button} from "../common/Button";
+import {APIResponseError, parseError} from "../utils/errors";
+import {SignInCode} from "./SignInCode";
+import {Validations} from "../utils/formValidations";
+import {SignInPassword} from "./SignInPassword";
+import {VerificationSwitcher} from "./VerificationSwitcher";
+import {EmailCodeFactor} from "@clerk/types";
 
 interface SignInInputs {
   emailAddress: string;
@@ -26,9 +27,8 @@ export enum SignInFormSteps {
   PASSWORD,
 }
 
-export function SignInForm(): JSX.Element {
-  const signIn = useSignIn();
-  const clerk = useClerk();
+export function SignInForm() {
+  const {isLoaded, signIn, setSession} = useSignIn();
   const router = useRouter();
   const [firstName, setFirstName] = React.useState("");
   const [isLoading, setIsLoading] = React.useState(false);
@@ -42,6 +42,10 @@ export function SignInForm(): JSX.Element {
     formState: { errors },
   } = useForm<SignInInputs>();
 
+  if(!isLoaded) {
+    return null;
+  }
+
   const sendSignInCode = async function () {
     const emailAddress = getValues("emailAddress");
     const signInAttempt = await signIn.create({
@@ -50,13 +54,12 @@ export function SignInForm(): JSX.Element {
 
     const emailCodeFactor = signInAttempt.supportedFirstFactors.find(
       (factor) => factor.strategy === "email_code"
-    );
+    ) as EmailCodeFactor;
 
-    setFirstName(signInAttempt.userData.first_name || "");
+    setFirstName(signInAttempt.userData.firstName || "");
     await signInAttempt.prepareFirstFactor({
       strategy: "email_code",
-      // @ts-ignore
-      email_address_id: emailCodeFactor.email_address_id,
+      emailAddressId: emailCodeFactor.emailAddressId,
     });
   };
 
@@ -77,7 +80,7 @@ export function SignInForm(): JSX.Element {
 
   const signUpComplete = async (createdSessionId: string) => {
     /** Couldn't the signin be updated and have the createdSessionId ? */
-    clerk.setSession(createdSessionId, () => router.push("/dashboard"));
+    setSession(createdSessionId, () => router.push("/dashboard"));
   };
 
   return (

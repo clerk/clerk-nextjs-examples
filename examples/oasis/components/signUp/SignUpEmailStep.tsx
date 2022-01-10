@@ -1,10 +1,10 @@
 import formStyles from "../layout/FormLayout.module.css";
-import { useForm } from "react-hook-form";
-import { useSignUp } from "@clerk/nextjs";
-import { Button } from "../Button";
-import { Input } from "../Input";
-import { Title } from "../Title";
-import { parseError, APIResponseError } from "../../utils/errors";
+import {useForm} from "react-hook-form";
+import {useSignUp} from "@clerk/nextjs";
+import {Button} from "../Button";
+import {Input} from "../Input";
+import {Title} from "../Title";
+import {parseError, APIResponseError} from "../../utils/errors";
 import React from "react";
 
 const SIMPLE_REGEX_PATTERN = /^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;
@@ -13,8 +13,12 @@ type SignUpEmailStepProps = {
   onDone: () => void;
 };
 
-export function SignUpEmailStep({ onDone }: SignUpEmailStepProps): JSX.Element {
-  const signUp = useSignUp();
+export function SignUpEmailStep({onDone}: SignUpEmailStepProps) {
+  const {signUp, isLoaded} = useSignUp();
+
+  if (!isLoaded) {
+    return null;
+  }
 
   const {
     register,
@@ -22,15 +26,15 @@ export function SignUpEmailStep({ onDone }: SignUpEmailStepProps): JSX.Element {
     setError,
     clearErrors,
     handleSubmit,
-    formState: { errors, isSubmitting },
-  } = useForm<{ email: string }>({ mode: "all" });
+    formState: {errors, isSubmitting},
+  } = useForm<{ email: string }>({mode: "all"});
 
   const sendClerkOtp = async function () {
     const emailAddress = getValues("email");
     const signUpAttempt = await signUp.create({
       emailAddress,
     });
-    await signUpAttempt.prepareEmailAddressVerification();
+    await signUpAttempt.prepareEmailAddressVerification({strategy: 'email_code'});
   };
 
   const verifyEmail = async function () {

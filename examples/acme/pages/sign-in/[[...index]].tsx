@@ -4,7 +4,7 @@ import { AuthLayout } from "../../layouts/AuthLayout";
 const SignInPage = () => {
   return (
     <AuthLayout>
-      <SignIn signUpURL="/sign-up" />
+      <SignIn signUpUrl="/sign-up" />
     </AuthLayout>
   );
 };

@@ -1,6 +1,6 @@
-import { withSession } from "@clerk/nextjs/api";
+import {withAuth} from "@clerk/nextjs/api";
 
-export default withSession((req, res) => {
+export default withAuth((req, res) => {
   res.statusCode = 200;
 
   if (req.session) {

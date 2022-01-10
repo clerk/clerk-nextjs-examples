@@ -1,5 +1,11 @@
 # Clerk Next.js Examples
 
+**Clerk is Hiring!**
+
+Would you like to work on Open Source software and help maintain this repository? Apply today https://apply.workable.com/clerk-dev/.
+
+---
+
 This repository holds sample code for different types of authentication flows you might need for your application. All built using [Clerk](https://clerk.dev?utm_source=github&utm_medium=starters&utm_campaign=nextjs-examples)!
 
 <div style="display: flex;gap:10px;flex-flow:wrap;">

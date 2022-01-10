@@ -1,15 +1,10 @@
 import "../styles/globals.css";
 import "../styles/variables.css";
-import type { AppProps } from "next/app";
-import {
-  ClerkProvider,
-  SignedIn,
-  SignedOut,
-  RedirectToSignUp,
-} from "@clerk/nextjs";
+import type {AppProps} from "next/app";
+import {ClerkProvider, RedirectToSignUp, SignedIn, SignedOut,} from "@clerk/nextjs";
 import GithubLink from "../components/GithubLink";
-import { useRouter } from "next/router";
-import { Dashboard } from "../components/Dashboard";
+import {useRouter} from "next/router";
+import {Dashboard} from "../components/Dashboard";
 
 function WidgetApp({ Component, pageProps }: AppProps) {
   const { pathname } = useRouter();
@@ -18,7 +13,7 @@ function WidgetApp({ Component, pageProps }: AppProps) {
 
   return (
     <>
-      <ClerkProvider>
+      <ClerkProvider {...pageProps}>
         <SignedIn>
           <Dashboard />
         </SignedIn>

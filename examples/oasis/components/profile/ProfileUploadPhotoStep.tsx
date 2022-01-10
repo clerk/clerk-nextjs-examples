@@ -1,23 +1,23 @@
 import formStyles from "../layout/FormLayout.module.css";
 import styles from "./Profile.module.css";
 import UploadIcon from "../../assets/svg/upload.svg";
-import React, { useRef, useState } from "react";
-import { useRouter } from "next/router";
-import { useUser } from "@clerk/nextjs";
-import { useForm } from "react-hook-form";
-import { Button } from "../Button";
-import { Title } from "../Title";
+import React, {useRef, useState} from "react";
+import {useRouter} from "next/router";
+import {useUser} from "@clerk/nextjs";
+import {useForm} from "react-hook-form";
+import {Button} from "../Button";
+import {Title} from "../Title";
 
 export function ProfileUploadPhotoStep() {
-  const user = useUser();
+  const { user } = useUser();
   const router = useRouter();
-  const { register, getValues, handleSubmit } = useForm<{ photo?: File[] }>({
+  const {register, getValues, handleSubmit} = useForm<{ photo?: File[] }>({
     mode: "all",
   });
   const [photoSrc, setPhotoSrc] = useState<string>("");
   const fileRef = useRef<HTMLInputElement | null>(null);
 
-  const { ref: fileUploadRef, onChange: onFileChangeHookForm } =
+  const {ref: fileUploadRef, onChange: onFileChangeHookForm} =
     register("photo");
 
   const promptForFile = () => {
@@ -34,7 +34,7 @@ export function ProfileUploadPhotoStep() {
   const onSubmit = async () => {
     const photo = getValues("photo")?.[0];
     if (photo) {
-      await user.setProfileImage(photo);
+      await user?.setProfileImage({file: photo});
     }
 
     router.push("/dashboard");
@@ -61,7 +61,7 @@ export function ProfileUploadPhotoStep() {
         className={styles.fileInput}
       />
       {photoSrc ? (
-        <img src={photoSrc} className={styles.profileImg} alt="profile" />
+        <img src={photoSrc} className={styles.profileImg} alt="profile"/>
       ) : (
         <button
           type="button"
@@ -69,10 +69,10 @@ export function ProfileUploadPhotoStep() {
           onClick={promptForFile}
           className={styles.fileButton}
         >
-          <UploadIcon />
+          <UploadIcon/>
         </button>
       )}
-      <Button disabled={!getValues("photo")} style={{ marginTop: 24 }}>
+      <Button disabled={!getValues("photo")} style={{marginTop: 24}}>
         Continue
       </Button>
       <button

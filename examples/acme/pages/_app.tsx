@@ -17,7 +17,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter();
 
   return (
-    <ClerkProvider theme={theme}>
+    <ClerkProvider theme={theme} {...pageProps}>
       <main>
         <SignedIn>
           <Component {...pageProps} />

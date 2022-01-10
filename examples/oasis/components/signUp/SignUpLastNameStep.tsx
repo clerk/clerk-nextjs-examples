@@ -1,17 +1,17 @@
 import formStyles from "../layout/FormLayout.module.css";
-import { useForm } from "react-hook-form";
-import { useSignUp } from "@clerk/nextjs";
-import { Button } from "../Button";
-import { Input } from "../Input";
-import { Title } from "../Title";
-import { parseError, APIResponseError } from "../../utils/errors";
+import {useForm} from "react-hook-form";
+import {useSignUp} from "@clerk/nextjs";
+import {Button} from "../Button";
+import {Input} from "../Input";
+import {Title} from "../Title";
+import {APIResponseError, parseError} from "../../utils/errors";
 
 type SignUpLastNAmeStepProps = {
   onDone: () => void;
 };
 
-export function SignUpLastNameStep({ onDone }: SignUpLastNAmeStepProps) {
-  const signUp = useSignUp();
+export function SignUpLastNameStep({onDone}: SignUpLastNAmeStepProps) {
+  const {signUp, isLoaded } = useSignUp();
 
   const {
     register,
@@ -19,13 +19,17 @@ export function SignUpLastNameStep({ onDone }: SignUpLastNAmeStepProps) {
     setError,
     clearErrors,
     handleSubmit,
-    formState: { errors, isSubmitting },
-  } = useForm<{ lastName: string }>({ mode: "all" });
+    formState: {errors, isSubmitting},
+  } = useForm<{ lastName: string }>({mode: "all"});
+
+  if (!isLoaded) {
+    return null;
+  }
 
   const save = async () => {
     try {
       clearErrors();
-      await signUp.update({ lastName: getValues("lastName") });
+      await signUp.update({lastName: getValues("lastName")});
       onDone();
     } catch (err) {
       setError("lastName", {
@@ -40,7 +44,7 @@ export function SignUpLastNameStep({ onDone }: SignUpLastNAmeStepProps) {
       <Title>What’s your last name?</Title>
       <Input
         errorText={errors.lastName?.message}
-        {...register("lastName", { required: true, minLength: 2 })}
+        {...register("lastName", {required: true, minLength: 2})}
       />
       <Button
         disabled={

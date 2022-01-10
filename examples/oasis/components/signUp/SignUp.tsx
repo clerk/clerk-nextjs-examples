@@ -16,6 +16,7 @@ enum FormSteps {
 }
 
 function SignUp() {
+  console.log('here?')
   const [formStep, setFormStep] = useState(FormSteps.EMAIL);
   const gotoNextStep = () => setFormStep((formStep) => formStep + 1);
 
@@ -39,4 +40,4 @@ function SignUp() {
   );
 }
 
-export const SignUpWithClerk = withClerk(SignUp);
+export const SignUpWithClerk = SignUp;

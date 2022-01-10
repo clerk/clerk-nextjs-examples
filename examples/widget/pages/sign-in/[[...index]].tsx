@@ -1,7 +1,7 @@
-import { SignedOut } from "@clerk/clerk-react";
-import type { NextPage } from "next";
-import { SignInLayout } from "../../layouts/SignInLayout";
-import { SignInForm } from "../../components/SignInForm";
+import {SignedOut} from "@clerk/nextjs";
+import type {NextPage} from "next";
+import {SignInLayout} from "../../layouts/SignInLayout";
+import {SignInForm} from "../../components/SignInForm";
 
 const SignIn: NextPage = () => {
   return (

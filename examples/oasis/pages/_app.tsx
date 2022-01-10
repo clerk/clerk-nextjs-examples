@@ -15,8 +15,10 @@ function MyApp({ Component, pageProps }: AppProps) {
 
   const publicPages = ["/", "/sign-in/[[...index]]", "/sign-up/[[...index]]"];
 
+  console.log({pathname})
+
   return (
-    <ClerkProvider>
+    <ClerkProvider {...pageProps}>
       <MainLayout>
         <SignedIn>
           <Component {...pageProps} />

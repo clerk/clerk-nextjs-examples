@@ -11,12 +11,11 @@
     "prisma:studio": "prisma studio"
   },
   "dependencies": {
-    "@clerk/nextjs": "^2.0.1",
-    "@clerk/types": "^1.14.3",
+    "@clerk/nextjs": "^3",
     "@prisma/client": "^3.3.0",
     "clsx": "^1.1.1",
     "micro": "^9.3.4",
-    "next": "11.1.2",
+    "next": "12.1.5",
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "react-hook-form": "^7.17.1",
@@ -32,7 +31,7 @@
     "eslint": "7.32.0",
     "eslint-config-next": "11.1.2",
     "prisma": "^3.3.0",
-    "typescript": "4.4.3"
+    "typescript": "4.6.3"
   },
   "prisma": {
     "schema": "db/prisma/schema.prisma"

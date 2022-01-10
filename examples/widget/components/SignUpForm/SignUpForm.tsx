@@ -1,18 +1,18 @@
-import { useClerk, useSignUp } from "@clerk/clerk-react";
-import { useRouter } from "next/router";
+import {useSignUp} from "@clerk/clerk-react";
+import {useRouter} from "next/router";
 import React from "react";
-import { SubmitHandler, useForm } from "react-hook-form";
+import {SubmitHandler, useForm} from "react-hook-form";
 import USA from "../../assets/svg/USA.svg";
-import { Button } from "../common/Button";
-import { ErrorMessage } from "../common/ErrorMessage";
-import { Input } from "../common/Input";
-import { Title } from "../common/Title";
-import { APIResponseError, parseError } from "../utils/errors";
-import { Notice } from "../common/Notice";
-import { SignUpCode } from "./SignUpCode";
+import {Button} from "../common/Button";
+import {ErrorMessage} from "../common/ErrorMessage";
+import {Input} from "../common/Input";
+import {Title} from "../common/Title";
+import {APIResponseError, parseError} from "../utils/errors";
+import {Notice} from "../common/Notice";
+import {SignUpCode} from "./SignUpCode";
 import styles from "./SignUpForm.module.css";
-import { Terms } from "./Terms";
-import { Validations } from "../utils/formValidations";
+import {Terms} from "./Terms";
+import {Validations} from "../utils/formValidations";
 
 interface SignUpInputs {
   name: string;
@@ -29,9 +29,8 @@ enum SignUpFormSteps {
   CODE,
 }
 
-export function SignUpForm(): JSX.Element {
-  const clerk = useClerk();
-  const signUp = useSignUp();
+export function SignUpForm() {
+  const {isLoaded, setSession, signUp} = useSignUp();
   const router = useRouter();
   const [isLoading, setIsLoading] = React.useState(false);
 
@@ -45,6 +44,10 @@ export function SignUpForm(): JSX.Element {
     watch,
     clearErrors,
   } = useForm<SignUpInputs>({ defaultValues: { country: "USA" } });
+
+  if(!isLoaded) {
+    return null;
+  }
 
   const onSubmit: SubmitHandler<SignUpInputs> = async ({
     emailAddress,
@@ -85,7 +88,7 @@ export function SignUpForm(): JSX.Element {
 
   const signUpComplete = async (createdSessionId: string) => {
     /** Couldn't the signup be updated and have the createdSessionId ? */
-    await clerk.setSession(createdSessionId, () => router.push("/dashboard"));
+    await setSession(createdSessionId, () => router.push("/dashboard"));
   };
 
   return (

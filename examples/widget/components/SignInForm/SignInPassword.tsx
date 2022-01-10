@@ -1,10 +1,10 @@
-import { useSignIn } from "@clerk/clerk-react";
+import {useSignIn} from "@clerk/nextjs";
 import React from "react";
-import { SubmitHandler, useForm } from "react-hook-form";
-import { Button } from "../common/Button";
-import { Input } from "../common/Input";
-import { APIResponseError, parseError } from "../utils/errors";
-import { Validations } from "../utils/formValidations";
+import {SubmitHandler, useForm} from "react-hook-form";
+import {Button} from "../common/Button";
+import {Input} from "../common/Input";
+import {APIResponseError, parseError} from "../utils/errors";
+import {Validations} from "../utils/formValidations";
 
 import styles from "./SignInPassword.module.css";
 
@@ -12,8 +12,8 @@ type SignInPasswordProps = {
   onDone: (sessionId: string) => void;
 };
 
-export function SignInPassword({ onDone }: SignInPasswordProps): JSX.Element {
-  const signIn = useSignIn();
+export function SignInPassword({ onDone }: SignInPasswordProps) {
+  const {isLoaded, signIn} = useSignIn();
   const [isLoading, setIsLoading] = React.useState(false);
 
   const {
@@ -22,6 +22,10 @@ export function SignInPassword({ onDone }: SignInPasswordProps): JSX.Element {
     formState: { errors },
     setError,
   } = useForm<{ password: string }>();
+
+  if(!isLoaded) {
+    return null;
+  }
 
   const verifyPassword: SubmitHandler<{ password: string }> = async function ({
     password,

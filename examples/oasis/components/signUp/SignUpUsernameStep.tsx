@@ -1,16 +1,14 @@
 import formStyles from "../layout/FormLayout.module.css";
-import { useForm } from "react-hook-form";
-import { useClerk, useSignUp } from "@clerk/nextjs";
-import { Button } from "../Button";
-import { Input } from "../Input";
-import { Title } from "../Title";
-import { parseError, APIResponseError } from "../../utils/errors";
-import type { SignUpResource } from "@clerk/types";
+import {useForm} from "react-hook-form";
+import {useSignUp} from "@clerk/nextjs";
+import {Button} from "../Button";
+import {Input} from "../Input";
+import {Title} from "../Title";
+import {APIResponseError, parseError} from "../../utils/errors";
 import router from "next/router";
 
 export function SignUpUsernameStep() {
-  const clerk = useClerk();
-  const signUp = useSignUp();
+  const {signUp, isLoaded, setSession} = useSignUp();
 
   const {
     register,
@@ -18,8 +16,12 @@ export function SignUpUsernameStep() {
     setError,
     clearErrors,
     handleSubmit,
-    formState: { errors, isSubmitting },
-  } = useForm<{ username: string }>({ mode: "all" });
+    formState: {errors, isSubmitting},
+  } = useForm<{ username: string }>({mode: "all"});
+
+  if (!isLoaded) {
+    return null;
+  }
 
   const save = async () => {
     try {
@@ -27,9 +29,12 @@ export function SignUpUsernameStep() {
       const completeSignUp = await signUp.update({
         username: getValues("username"),
       });
-      await clerk.setSession(completeSignUp.createdSessionId, () =>
-        router.push("/create-profile")
-      );
+      if (completeSignUp.status === 'complete') {
+        await setSession(completeSignUp.createdSessionId, () => {
+            return router.push("/create-profile");
+          }
+        );
+      }
     } catch (err) {
       setError("username", {
         type: "manual",
