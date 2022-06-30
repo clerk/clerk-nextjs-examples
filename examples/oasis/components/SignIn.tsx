@@ -23,7 +23,7 @@ enum FormSteps {
 
 function SignIn() {
   const router = useRouter();
-  const signIn = useSignIn();
+  const { isLoaded, signIn } = useSignIn();
   const clerk = useClerk();
 
   const [formStep, setFormStep] = useState(FormSteps.EMAIL);
@@ -36,6 +36,10 @@ function SignIn() {
     handleSubmit,
     formState: { errors, isSubmitting },
   } = useForm<SignInInputs>({ mode: "all" });
+
+  if (!isLoaded) {
+    return null;
+  }
 
   const sendOtp = async function () {
     const emailAddress = getValues("email");
