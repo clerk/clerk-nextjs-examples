@@ -16,9 +16,9 @@ The recommended way to sync your datastore with Clerk is described in the follow
 
 In the schema above there are three main steps.
 
-  1. A user signs up in your application. Your front-end will ask Clerk to handle the sign up.
-  2. Clerk replies back with the sign up response. The `SignUp` object and the new `User` object are available through the `Clerk`object in the front-end.
-  3. Clerk triggers a `user.created` webhook to your configured endpoint. The payload will hold all information regarding the newly created user.
+1. A user signs up in your application. Your front-end will ask Clerk to handle the sign up.
+2. Clerk replies back with the sign up response. The `SignUp` object and the new `User` object are available through the `Clerk`object in the front-end.
+3. Clerk triggers a `user.created` webhook to your configured endpoint. The payload will hold all information regarding the newly created user.
 
 The webhook will be retried until Clerk receives a `200 OK` response from your server.
 
@@ -26,7 +26,7 @@ The webhook will be retried until Clerk receives a `200 OK` response from your s
 
 Webhooks can be configured through your [Clerk Dashboard](https://dashboard.clerk.dev).
 
-Select your application instance and navigate to *Integrations*. Turn on the Svix integration.
+Select your application instance and navigate to _Integrations_. Turn on the Svix integration.
 
 <img height="300px" src="../../../../../docs/widget-integrations-webhooks.png" alt="Enable webhooks integration" />
 
@@ -50,6 +50,6 @@ A popular ngrok alternative is [localtunnel](https://github.com/localtunnel/loca
 
 To learn more about Clerk webhooks and Svix, the underlying webhook delivery service, take a look at the following links.
 
-- [Clerk webhook documentation](https://docs.clerk.dev/reference/webhooks)
+- [Clerk webhook documentation](https://clerk.dev/docs/integration/webhooks)
 - [Receiving webhooks with Svix](https://docs.svix.com/receiving/introduction)
 - [Verifying Svix webhooks](https://docs.svix.com/receiving/verifying-payloads/how)

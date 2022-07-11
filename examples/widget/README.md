@@ -2,11 +2,11 @@
 
 ![Preview](../../docs/widget.png)
 
-This Next.js project demonstrates how to use [@clerk/clerk-nextjs](https://docs.clerk.dev/get-started/nextjs?utm_source=github&utm_medium=starters&utm_campaign=widget) together with the core ClerkJS SDK methods to build a custom sign-up and sign-in screen with custom user attributes.
+This Next.js project demonstrates how to use [@clerk/clerk-nextjs](https://clerk.dev/docs/quickstarts/get-started-with-nextjs?utm_source=github&utm_medium=starters&utm_campaign=widget) together with the core ClerkJS SDK methods to build a custom sign-up and sign-in screen with custom user attributes.
 
 The custom sign-in flow is implemented in a single component to demonstrate how to use ClerkJS with minimum effort. On the contrary, the custom sign-up flow has been fully componentized and leverages ClerkJS frontend state management. We also used [React-hook-form](https://react-hook-form.com) to build our forms.
 
-Additionally, the project demonstrates how to synchronize data between your back-end (server) and Clerk.dev. The recommended method for syncing user data is to set up a server endpoint which receives [Clerk webhooks](https://docs.clerk.dev/reference/webhooks) for user related events.
+Additionally, the project demonstrates how to synchronize data between your back-end (server) and Clerk.dev. The recommended method for syncing user data is to set up a server endpoint which receives [Clerk webhooks](https://clerk.dev/docs/integration/webhooks) for user related events.
 
 [![Open in VS Code](https://open.vscode.dev/badges/open-in-vscode.svg)](https://open.vscode.dev/clerkinc/clerk-nextjs-examples)
 
@@ -16,25 +16,30 @@ https://nextjs.widget.clerk.app/
 
 ## Getting Started
 
-### Clerk Instance Setup
+### 1. Setup environment variables
 
-The Widget example requires a few Clerk instance settings to be set. Go to your instance dashboard page under **Settings** → **URL and Redirects** and set `Sign-in` and `Sign-up` urls as shown below:
+First, you need to set two environment variables for Clerk's SDK. Go to the API Keys page and start by copying the Frontend API key. Then, add it a .env.local file in your application root, with the name `NEXT_PUBLIC_CLERK_FRONTEND_API`:
 
-<img height="300px" src="../../docs/widget-url-and-redirects-settings.png"/>
+```bash
+# Replace [frontend-api-key] with your actual Frontend API key
+echo "NEXT_PUBLIC_CLERK_FRONTEND_API=[frontend-api-key]" >> .env.local
+```
 
-### Development Setup
+Next, go back to the API Keys page and copy the Backend API key. Then, add it in the same .env.local file, with the name `CLERK_API_KEY`:
 
-1. Follow the instructions at the [getting started guide](https://docs.clerk.dev/get-started/nextjs?utm_source=github&utm_medium=starters&utm_campaign=widget) for Next.js to setup Clerk.
+```bash
+# Replace [backend-api-key] with your actual Backend API key
+echo "CLERK_API_KEY=[backend-api-key]" >> .env.local
 
-2. Run the development server:
+```
+
+### 2. Run the development server
 
 ```bash
 npm run dev
-# or
-yarn dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Lastly, open [http://localhost:3000](http://localhost:3000) with your browser.
 
 You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
 

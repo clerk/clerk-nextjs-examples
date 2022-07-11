@@ -1,9 +1,3 @@
-.background {
-  min-height: 100vh;
-  display: flex;
-  background: var(--color-primary);
-}
-
 .content {
   width: 720px;
   margin: 0 auto;

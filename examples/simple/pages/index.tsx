@@ -71,13 +71,13 @@ const SignedOutCards = () => {
 };
 
 const SignedInCards = () => {
-  const user = useUser();
+  const { user } = useUser();
 
   return (
     <>
       <a className={styles.staticCard}>
         <h2>Welcome!</h2>
-        <p>Signed in as: {user.primaryEmailAddress!.toString()}</p>
+        <p>Signed in as: {user?.primaryEmailAddress!.toString()}</p>
       </a>
       <Link href="/user">
         <a className={styles.card}>

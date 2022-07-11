@@ -2,7 +2,7 @@
 
 ![Preview](../../docs/acme.png)
 
-This Next.js project demonstrates how to use [Clerk Components](http://www.clerk.dev?utm_source=github&utm_medium=starters&utm_campaign=acme) to build a comprehensive, custom sign-up and sign-in experience with minimum effort.
+This Next.js project demonstrates how to use [Clerk Components](https://clerk.dev/docs/component-reference/overview?utm_source=github&utm_medium=starters&utm_campaign=acme) to build a comprehensive, custom sign-up and sign-in experience with minimum effort. It demonstrates how to build a custom My profile page using the `<UserProfile/>` component.
 
 [![Open in VS Code](https://open.vscode.dev/badges/open-in-vscode.svg)](https://open.vscode.dev/clerkinc/clerk-nextjs-examples)
 
@@ -12,15 +12,30 @@ https://nextjs.acme.clerk.app/
 
 ## Getting Started
 
-First, run the development server:
+### 1. Setup environment variables
+
+First, you need to set two environment variables for Clerk's SDK. Go to the API Keys page and start by copying the Frontend API key. Then, add it a .env.local file in your application root, with the name `NEXT_PUBLIC_CLERK_FRONTEND_API`:
+
+```bash
+# Replace [frontend-api-key] with your actual Frontend API key
+echo "NEXT_PUBLIC_CLERK_FRONTEND_API=[frontend-api-key]" >> .env.local
+```
+
+Next, go back to the API Keys page and copy the Backend API key. Then, add it in the same .env.local file, with the name `CLERK_API_KEY`:
+
+```bash
+# Replace [backend-api-key] with your actual Backend API key
+echo "CLERK_API_KEY=[backend-api-key]" >> .env.local
+
+```
+
+### 2. Run the development server
 
 ```bash
 npm run dev
-# or
-yarn dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Lastly, open [http://localhost:3000](http://localhost:3000) with your browser.
 
 You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
 
@@ -28,6 +43,7 @@ You can start editing the page by modifying `pages/index.tsx`. The page auto-upd
 
 To learn more about Next.js, take a look at the following resources:
 
+- [Next.js authentication with Clerk](https://clerk.dev/docs/quickstarts/get-started-with-nextjs) - Add secure, beautiful, and fast authentication to Next.js with Clerk.
 - [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
 - [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 

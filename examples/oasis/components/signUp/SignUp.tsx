@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { withClerk } from "@clerk/nextjs";
 import { FormLayout } from "../layout/FormLayout";
 import { SignUpEmailStep } from "./SignUpEmailStep";
 import { SignUpCodeStep } from "./SignUpCodeStep";
@@ -16,7 +15,6 @@ enum FormSteps {
 }
 
 function SignUp() {
-  console.log('here?')
   const [formStep, setFormStep] = useState(FormSteps.EMAIL);
   const gotoNextStep = () => setFormStep((formStep) => formStep + 1);
 
