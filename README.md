@@ -27,7 +27,7 @@ This repository holds sample code for different types of authentication flows yo
 
 ### 1. Acme
 
-#### Custom sign up screen using the ClerkJS Components.
+Custom sign up screen using the ClerkJS Components.
 
 [Live demo](https://nextjs.acme.clerk.app/)
 
@@ -35,7 +35,7 @@ This repository holds sample code for different types of authentication flows yo
 
 ### 2. Oasis
 
-#### Custom multi-step authentication form using Clerk hooks.</h5>
+Custom multi-step authentication form using Clerk hooks.</h5>
 
 [Live demo](https://nextjs.oasis.clerk.app/)
 
@@ -44,7 +44,7 @@ This repository holds sample code for different types of authentication flows yo
 
 ### 3. Simple
 
-#### The simplest setup with standard authentication capabilities.</h5>
+The simplest setup with standard authentication capabilities.</h5>
 
 [Live demo](https://nextjs.oasis.clerk.app/)
 
@@ -52,7 +52,7 @@ This repository holds sample code for different types of authentication flows yo
     
 ### 4. Widget
 
-#### Collect custom user data during sign up using Clerk hooks.
+Collect custom user data during sign up using Clerk hooks.
 
 [Live demo](https://nextjs.widget.clerk.app/)
 
