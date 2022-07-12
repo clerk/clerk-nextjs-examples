@@ -46,7 +46,7 @@ Custom multi-step authentication form using Clerk hooks.</h5>
 
 The simplest setup with standard authentication capabilities.</h5>
 
-[Live demo](https://nextjs.oasis.clerk.app/)
+[Live demo](https://nextjs.simple.clerk.app/)
 
 <img height="250" width="400" src="./docs/simple.png"/>
     
