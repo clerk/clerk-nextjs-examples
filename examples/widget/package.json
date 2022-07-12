@@ -11,27 +11,27 @@
     "prisma:studio": "prisma studio"
   },
   "dependencies": {
-    "@clerk/nextjs": "^3",
+    "@clerk/nextjs": "^3.7.0",
     "@prisma/client": "^3.3.0",
     "clsx": "^1.1.1",
     "micro": "^9.3.4",
-    "next": "12.1.5",
-    "react": "17.0.2",
-    "react-dom": "17.0.2",
+    "next": "12.2.2",
+    "react-dom": "18.2.0",
     "react-hook-form": "^7.17.1",
     "react-transition-group": "^4.4.2",
     "react-youtube": "^7.13.1",
+    "react": "18.2.0",
     "svix": "^0.33.0"
   },
   "devDependencies": {
     "@svgr/webpack": "^5.5.0",
     "@types/micro": "^7.3.6",
-    "@types/react": "17.0.24",
+    "@types/react": "18.0.15",
     "@types/react-transition-group": "^4.4.3",
-    "eslint": "7.32.0",
-    "eslint-config-next": "11.1.2",
+    "eslint": "8.0.1",
+    "eslint-config-next": "12.2.2",
     "prisma": "^3.3.0",
-    "typescript": "4.6.3"
+    "typescript": "4.7.4"
   },
   "prisma": {
     "schema": "db/prisma/schema.prisma"

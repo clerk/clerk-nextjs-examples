@@ -15,12 +15,19 @@
 }
 
 /**
-   * Clerk Components CSS customization
-   */
+  * Clerk Components CSS customization
+  */
+
+.cl-sign-in, .cl-sign-up {
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
 
 .cl-auth-form-body input {
   border: 0;
   border-bottom: 1px solid #e5e5e5;
+  border-radius: 0;
   padding: 0;
 }
 

@@ -5,9 +5,5 @@ export function SignInLayout({
 }: {
   children: React.ReactNode;
 }): JSX.Element {
-  return (
-    <div className={styles.background}>
-      <div className={styles.content}>{children}</div>
-    </div>
-  );
+  return <div className={styles.content}>{children}</div>;
 }

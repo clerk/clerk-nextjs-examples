@@ -1,17 +1,17 @@
 import formStyles from "../layout/FormLayout.module.css";
-import {useSignUp} from "@clerk/nextjs";
-import {useForm} from "react-hook-form";
-import {Button} from "../Button";
-import {Input} from "../Input";
-import {Title} from "../Title";
-import {parseError, APIResponseError} from "../../utils/errors";
+import { useSignUp } from "@clerk/nextjs";
+import { useForm } from "react-hook-form";
+import { Button } from "../Button";
+import { Input } from "../Input";
+import { Title } from "../Title";
+import { parseError, APIResponseError } from "../../utils/errors";
 
 type SignUpCodeStepProps = {
   onDone: () => void;
 };
 
-export function SignUpCodeStep({onDone}: SignUpCodeStepProps) {
-  const {signUp, isLoaded} = useSignUp();
+export function SignUpCodeStep({ onDone }: SignUpCodeStepProps) {
+  const { signUp, isLoaded } = useSignUp();
 
   const {
     register,
@@ -20,8 +20,8 @@ export function SignUpCodeStep({onDone}: SignUpCodeStepProps) {
     setError,
     clearErrors,
     handleSubmit,
-    formState: {errors, isSubmitting},
-  } = useForm<{ code: string }>({mode: "all"});
+    formState: { errors, isSubmitting },
+  } = useForm<{ code: string }>({ mode: "all" });
 
   if (!isLoaded) {
     return null;
@@ -50,7 +50,7 @@ export function SignUpCodeStep({onDone}: SignUpCodeStepProps) {
       <Title>Enter the confirmation code</Title>
       <span className={formStyles.sub}>
         A 6-digit code was just sent to {signUp.emailAddress}
-        <br/>
+        <br />
       </span>
       <Input
         errorText={errors.code?.message}

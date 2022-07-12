@@ -1,45 +1,68 @@
+<p align="center">
+  <a href="https://clerk.dev?utm_source=github&utm_medium=clerk_expo" target="_blank" rel="noopener noreferrer">
+    <img src="https://images.clerk.dev/static/clerk.svg" alt="Clerk logo" height="50">
+  </a>
+  <br />
+</p>
+
 # Clerk Next.js Examples
 
-**Clerk is Hiring!**
+<div align="center">
+
+[![Chat on Discord](https://img.shields.io/discord/856971667393609759.svg?logo=discord)](https://discord.com/invite/b5rXHjAg7A)
+[![Clerk documentation](https://img.shields.io/badge/documentation-clerk-green.svg)](https://clerk.dev/docs?utm_source=github&utm_medium=clerk_nextjs_examples)
+[![Follow on Twitter](https://img.shields.io/twitter/follow/ClerkDev?style=social)](https://twitter.com/intent/follow?screen_name=ClerkDev)
+
+</div>
+
+---
+
+### Clerk is Hiring!
 
 Would you like to work on Open Source software and help maintain this repository? Apply today https://apply.workable.com/clerk-dev/.
 
 ---
 
-This repository holds sample code for different types of authentication flows you might need for your application. All built using [Clerk](https://clerk.dev?utm_source=github&utm_medium=starters&utm_campaign=nextjs-examples)!
+This repository holds sample code for different types of authentication flows you might need for your Next.js application. All built using [Clerk](https://clerk.dev?utm_source=github&utm_medium=starters&utm_campaign=nextjs-examples)!
 
-<div style="display: flex;gap:10px;flex-flow:wrap;">
+<div style="display: grid;gap:20px;grid-template-columns: 1fr 1fr;">
     <div>
-        <img height="250" width="400" src="./docs/oasis.png"/>
+        <h3>Acme</h4>
+        <h4>Custom sign up screen using the ClerkJS Components.</h5>
+        <p>
+            <a src="https://nextjs.acme.clerk.app/">Live demo</a>
+        </p>
         <img height="250" width="400" src="./docs/acme.png"/>
     </div>
     <div>
-        <img height="250" width="400" src="./docs/widget.png"/>
+        <h3>Oasis</h4>
+        <h4>Custom multi-step authentication form using Clerk hooks.</h5>
+        <p>
+            <a src="https://nextjs.oasis.clerk.app/">Live demo</a>
+        </p>
+        <img height="250" width="400" src="./docs/oasis.png"/>
+    </div>
+    <div>
+        <h3>Simple</h4>
+        <h4>The simplest setup with standard authentication capabilities.</h5>
+        <p>
+            <a src="https://nextjs.oasis.clerk.app/">Live demo</a>
+        </p>
         <img height="250" width="400" src="./docs/simple.png"/>
     </div>
+    <div>
+        <h3>Widget</h4>
+        <h4>Collect custom user data during sign up using Clerk hooks.</h5>
+        <p>
+            <a src="https://nextjs.widget.clerk.app/">Live demo</a>
+        </p>
+        <img height="250" width="400" src="./docs/widget.png"/>
+    </div>
 </div>
-
-## Live demos
-
-- Clerk Acme - https://nextjs.acme.clerk.app/
-- Clerk Oasis - https://nextjs.oasis.clerk.app/
-- Clerk Widget - https://nextjs.widget.clerk.app/
-- Clerk Simple - https://nextjs.simple.clerk.app/
-
-## Example code
-
-- [Clerk Acme](./examples/acme): _Sign up screen using the Clerk Components._
-- [Clerk Oasis](./examples/oasis): _Multi-step authentication form._
-- [Clerk Widget](./examples/widget): _Custom user data sign up form._
-- [Clerk Simple](./examples/simple): _Showcase of a vanilla Clerk setup with standard capabilities in place._
 
 ## Sign up for Clerk
 
 To sign up, go to [https://clerk.dev](https://clerk.dev?utm_source=github&utm_medium=starters&utm_campaign=nextjs-examples), create your account and start building your user authentication!
-
-## Using the examples
-
-Each example is a fully runnable application which you can use either as a starter or a guideline on how you can utilize Clerk based on your requirements. In each example folder, you will find instructions on how to bootstrap the application.
 
 ## Having trouble ?
 

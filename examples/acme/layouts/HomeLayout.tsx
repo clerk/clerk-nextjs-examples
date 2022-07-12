@@ -9,10 +9,7 @@ export function HomeLayout({ children }: { children: React.ReactNode }) {
       <header>
         <div className={styles.logoRow}>
           <Logo />
-          <UserButton
-            userProfileUrl="/my-profile"
-            afterSignOutAllUrl="/sign-in"
-          />
+          <UserButton userProfileUrl="/my-profile" afterSignOutUrl="/sign-in" />
         </div>
         <nav className={styles.nav}>
           <button className={styles.navButton}>Home</button>

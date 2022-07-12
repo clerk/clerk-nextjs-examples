@@ -2,12 +2,15 @@ import styles from "./Header.module.css";
 import type { NextPage } from "next";
 import { useClerk, SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
 import Link from "next/link";
+
 // Header component using <SignedIn> & <SignedOut>.
 //
 // The SignedIn and SignedOut components are used to control rendering depending
 // on whether or not a visitor is signed in.
 //
-// https://docs.clerk.dev/frontend/react/signedin-and-signedout
+// https://clerk.dev/docs/component-reference/signed-in
+// https://clerk.dev/docs/component-reference/signed-out
+
 const Header: NextPage = () => {
   const { openSignIn } = useClerk();
 
@@ -20,7 +23,7 @@ const Header: NextPage = () => {
       </div>
       <SignedIn>
         <div className={styles.headerItem}>
-          <UserButton userProfileURL="/user" afterSignOutAll="/" />
+          <UserButton userProfileUrl="/user" afterSignOutUrl="/" />
         </div>
       </SignedIn>
       <SignedOut>
