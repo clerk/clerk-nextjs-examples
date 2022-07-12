@@ -25,40 +25,39 @@ Would you like to work on Open Source software and help maintain this repository
 
 This repository holds sample code for different types of authentication flows you might need for your Next.js application. All built using [Clerk](https://clerk.dev?utm_source=github&utm_medium=starters&utm_campaign=nextjs-examples)!
 
-<div style="display: grid;gap:20px;grid-template-columns: 1fr 1fr;">
-    <div>
-        <h3>Acme</h4>
-        <h4>Custom sign up screen using the ClerkJS Components.</h5>
-        <p>
-            <a src="https://nextjs.acme.clerk.app/">Live demo</a>
-        </p>
-        <img height="250" width="400" src="./docs/acme.png"/>
-    </div>
-    <div>
-        <h3>Oasis</h4>
-        <h4>Custom multi-step authentication form using Clerk hooks.</h5>
-        <p>
-            <a src="https://nextjs.oasis.clerk.app/">Live demo</a>
-        </p>
-        <img height="250" width="400" src="./docs/oasis.png"/>
-    </div>
-    <div>
-        <h3>Simple</h4>
-        <h4>The simplest setup with standard authentication capabilities.</h5>
-        <p>
-            <a src="https://nextjs.oasis.clerk.app/">Live demo</a>
-        </p>
-        <img height="250" width="400" src="./docs/simple.png"/>
-    </div>
-    <div>
-        <h3>Widget</h4>
-        <h4>Collect custom user data during sign up using Clerk hooks.</h5>
-        <p>
-            <a src="https://nextjs.widget.clerk.app/">Live demo</a>
-        </p>
-        <img height="250" width="400" src="./docs/widget.png"/>
-    </div>
-</div>
+### 1. Acme
+
+#### Custom sign up screen using the ClerkJS Components.
+
+[Live demo](https://nextjs.acme.clerk.app/)
+
+<img height="250" width="400" src="./docs/acme.png"/>
+
+### 2. Oasis
+
+#### Custom multi-step authentication form using Clerk hooks.</h5>
+
+[Live demo](https://nextjs.oasis.clerk.app/)
+
+<img height="250" width="400" src="./docs/oasis.png"/>
+
+
+### 3. Simple
+
+#### The simplest setup with standard authentication capabilities.</h5>
+
+[Live demo](https://nextjs.oasis.clerk.app/)
+
+<img height="250" width="400" src="./docs/simple.png"/>
+    
+### 4. Widget
+
+#### Collect custom user data during sign up using Clerk hooks.
+
+[Live demo](https://nextjs.widget.clerk.app/)
+
+<img height="250" width="400" src="./docs/widget.png"/>
+
 
 ## Sign up for Clerk
 
